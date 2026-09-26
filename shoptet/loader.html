@@ -1,0 +1,23 @@
+<!--
+  Timberstore loader — the ONLY custom code pasted into Shoptet
+  (Administrace → Vzhled a obsah → Editor HTML kódu → Záhlaví).
+  Production version = PROD. Change it only here. See CONTRIBUTING.md 3.1.
+  Before first use: replace GITHUB_OWNER with the GitHub account that owns this repo.
+-->
+<script>
+(function () {
+  var BASE = 'https://cdn.jsdelivr.net/gh/GITHUB_OWNER/timberstore@';
+  var PROD = 'v0.1.0'; // ← production version
+  var q = location.search.match(/[?&]ts_preview=([\w.\-]+)/);
+  if (q) document.cookie = q[1] === 'off'
+    ? 'ts_preview=; max-age=0; path=/'
+    : 'ts_preview=' + q[1] + '; max-age=604800; path=/';
+  var c = document.cookie.match(/(?:^|; )ts_preview=([\w.\-]+)/);
+  var ok = c && /^(v\d+\.\d+\.\d+(-rc\.\d+)?|[0-9a-f]{7,40})$/.test(c[1]);
+  var v = ok ? c[1] : PROD;
+  window.TimberLoader = { version: v, preview: !!ok };
+  // document.write: CSS blocks render (no flash), JS is defer (non-blocking)
+  document.write('<link rel="stylesheet" href="' + BASE + v + '/dist/timber.min.css">');
+  document.write('<script defer src="' + BASE + v + '/dist/timber.min.js"><\/script>');
+})();
+</script>

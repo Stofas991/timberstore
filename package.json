@@ -1,0 +1,23 @@
+{
+  "name": "timberstore",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Custom frontend and backend code for timberstore.sk (Shoptet)",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "lint": "eslint --no-error-on-unmatched-pattern src shared scripts",
+    "format": "prettier --write .",
+    "release": "npm version minor",
+    "release:patch": "npm version patch",
+    "release:rc": "npm version prerelease --preid rc",
+    "version": "npm run lint && npm run build && git add dist",
+    "postversion": "git push --follow-tags"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0",
+    "prettier": "^3.3.0"
+  }
+}

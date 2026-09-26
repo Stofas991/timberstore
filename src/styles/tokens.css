@@ -1,0 +1,15 @@
+/* Design tokens — the only place for colours, spacing and breakpoints. */
+:root {
+  --ts-color-accent: #d4884a; /* btn-primary on timberstore.sk */
+  --ts-color-text: #0f0f0f;
+  --ts-color-bg: #fff;
+  --ts-radius: 4px;
+  --ts-space-1: 4px;
+  --ts-space-2: 8px;
+  --ts-space-3: 16px;
+  --ts-z-preview: 99999;
+}
+
+/* Breakpoints (CSS custom properties can't be used in media queries —
+   keep these values in sync with the Shoptet template):
+   sm 768px · md 992px · lg 1200px */

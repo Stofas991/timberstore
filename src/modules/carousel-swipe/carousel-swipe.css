@@ -1,0 +1,9 @@
+/* M1 · Let the browser handle vertical scrolling, horizontal gestures go to the swipe handler. */
+.ts-carousel-swipe {
+  touch-action: pan-y;
+}
+
+.ts-carousel-swipe img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
