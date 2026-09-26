@@ -5,6 +5,22 @@
   --ts-color-muted: #818394; /* Shoptet's secondary text (e.g. back links) */
   --ts-color-bg: #fff;
   --ts-shadow-text-on-photo: 0 1px 2px rgb(0 0 0 / 45%), 0 0 14px rgb(0 0 0 / 35%);
+
+  /* C3 product table + view switch + quantity (values from the client's design) */
+  --ts-color-table-border: #e7eaee;
+  --ts-color-table-row-border: #eef1f3;
+  --ts-color-table-head-bg: #f5f7f9;
+  --ts-color-table-head-text: #6f7885;
+  --ts-color-table-row-hover: #eef7fc;
+  --ts-color-table-name: #20242a;
+  --ts-color-switch-border: #e2e5e9;
+  --ts-color-switch-bg: #f6f7f8;
+  --ts-color-switch-label: #707784;
+  --ts-color-switch-icon: #697282;
+  --ts-color-qty-border: #dfe4e8;
+  --ts-color-qty-btn-bg: #f7f8f9;
+  --ts-color-qty-text: #26313d;
+  --ts-color-in-cart: #2e9c42;
   --ts-radius: 4px;
   --ts-space-1: 4px;
   --ts-space-2: 8px;
