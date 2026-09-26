@@ -1,16 +1,19 @@
-/* Sticky header shown while scrolling up (Apollo: .is-header-fixed.is-header-hidden).
-   Drobnosti · Apollo shrinks the logo to 36 px there, but timber-custom.css forces it to
-   68 px (!important), so it fills the 70 px bar and touches both edges.
-   Keep the 310:68 logo ratio at 44 px.
+/* Header logo (desktop and tablet; mobile keeps Shoptet's 137 × 30 px).
+   Drobnosti · timber-custom.css forces the logo to 310 × 68 px (!important). In the
+   sticky header shown while scrolling up (Apollo: .is-header-fixed.is-header-hidden)
+   that fills the whole 70 px bar and touches both edges. The client prefers the
+   smaller logo everywhere: 200 × 44 px keeps the 310:68 ratio. The header height
+   stays the same (it follows the search field), the logo is centred with it.
    !important: beats the !important rules in timber-custom.css (legacy). */
 @media (min-width: 768px) {
-  .is-header-fixed.is-header-hidden #header .site-name {
-    height: auto;
-  }
-
-  .is-header-fixed.is-header-hidden #header .site-name a,
-  .is-header-fixed.is-header-hidden #header .site-name a img {
+  #header .site-name a,
+  #header .site-name a img {
     width: 200px !important;
     height: 44px !important;
+  }
+
+  /* Apollo fixes the sticky logo box at 36 px; let it fit the 44 px logo. */
+  .is-header-fixed.is-header-hidden #header .site-name {
+    height: auto;
   }
 }
