@@ -28,18 +28,26 @@ function showPreviewBadge(version) {
 }
 
 export function start(modules) {
-  const page = getPageType();
-
   window.Timber = {
     version: __VERSION__,
-    page,
+    page: null,
     modules: modules.map((m) => m.name),
   };
 
+  // The loader inserts our script dynamically, so it may run while <head> is
+  // still being parsed (no <body> yet). Everything touching the DOM waits here.
   const boot = () => {
+    const page = getPageType();
+    window.Timber.page = page;
     runModules(modules, page, document);
     if (window.TimberLoader?.preview) showPreviewBadge(__VERSION__);
     log.debug('started', window.Timber);
+
+    // Shoptet swaps page content via AJAX (filters, pagination) — re-run modules.
+    // Modules are idempotent, so already initialised elements are skipped.
+    document.addEventListener(SHOPTET_EVENTS.pageContentLoaded, () => {
+      runModules(modules, page, document);
+    });
   };
 
   if (document.readyState === 'loading') {
@@ -47,10 +55,4 @@ export function start(modules) {
   } else {
     boot();
   }
-
-  // Shoptet swaps page content via AJAX (filters, pagination) — re-run modules.
-  // Modules are idempotent, so already initialised elements are skipped.
-  document.addEventListener(SHOPTET_EVENTS.pageContentLoaded, () => {
-    runModules(modules, page, document);
-  });
 }

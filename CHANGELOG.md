@@ -6,6 +6,7 @@ Formát: verze · datum · karty · co se změnilo · PageSpeed mobil před/po.
 - **M1** · Fotky na detailu produktu jdou na mobilu přepínat prstem (swipe přepíná náhledy galerie Shoptetu, na první/poslední fotce se zastaví, lightbox se tahem neotevře).
 - **M1** · Swipe reaguje jen na dotyk (mobil/tablet). Myš na desktopu se chová jako bez našeho kódu.
 - **M1** · rc.1: na dotyku vypnutý zoom Shoptetu (cloud-zoom) nad fotkou produktu. Při rychlém swipování se otevíral podržením prstu a zůstával viset se starou fotkou (fotka neseděla s náhledem). Klepnutí dál otevírá lightbox, zoom myší na desktopu beze změny.
+- rc.2: oprava — kód občas vůbec nenaběhl (`Cannot read properties of null (reading 'classList')`). Loader vkládá skript dynamicky, takže se z cache může spustit dřív, než existuje `<body>`; typ stránky se teď zjišťuje až po DOMContentLoaded.
 - Loader: `PROD = ''` = vypnuto pro zákazníky, funguje jen preview.
 - PageSpeed mobil: před — / po —
 
