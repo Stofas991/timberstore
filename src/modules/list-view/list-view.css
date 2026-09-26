@@ -194,6 +194,13 @@
     display: none !important;
   }
 
+  /* The template animates card properties (transition 0.3s); switching views would
+     make every name shrink and slide. The table switches instantly. */
+  .ts-view-list #products *,
+  .ts-view-list .ts-product-table-head * {
+    transition: none !important;
+  }
+
   .ts-view-list #products > .product {
     display: block !important;
     width: 100% !important;

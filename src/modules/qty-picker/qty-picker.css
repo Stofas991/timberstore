@@ -52,6 +52,8 @@
      that carry our field, so the rule does nothing without this module.
      !important: timber-custom.css (legacy) styles the cart form/button with !important. */
   form.pr-action:has(> .ts-qty) {
+    width: auto !important;
+    max-width: none !important; /* legacy caps the form at 180 px, too narrow for field + button */
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
