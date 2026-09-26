@@ -8,6 +8,9 @@
 import { SEL } from '../../core/selectors.js';
 import { bindSwipe } from '../../core/swipe.js';
 
+// Compat mouse events a phone fires after a touch arrive within this window.
+const COMPAT_MOUSE_MS = 1000;
+
 function bind(image) {
   bindSwipe(image, (dir) => {
     // Re-read on every swipe: Shoptet redraws thumbnails on variant change.
@@ -19,6 +22,35 @@ function bind(image) {
   });
 }
 
+// Shoptet's cloud-zoom also reacts to touch: holding a finger for 150 ms opens
+// a zoom overlay inside the photo. A swipe often starts with such a hold, the
+// photo underneath changes, and because Shoptet rebuilds the zoom 201 ms after
+// every switch, the overlay can get stuck showing an old photo. On touch we
+// keep touch events (and the compat mouse events that follow them) away from
+// the zoom layer. Desktop mouse hover zoom is untouched; a tap still opens the
+// lightbox (that is a click, not blocked).
+function blockTouchZoom(image) {
+  let lastTouch = 0;
+  const onPointer = (e) => {
+    if (e.pointerType !== 'mouse') lastTouch = Date.now();
+  };
+  const onTouch = (e) => {
+    lastTouch = Date.now();
+    if (e.target.closest(SEL.productZoomTrap)) e.stopPropagation();
+  };
+  ['pointerdown', 'pointerup'].forEach((type) => image.addEventListener(type, onPointer, true));
+  const onCompatMouse = (e) => {
+    if (Date.now() - lastTouch < COMPAT_MOUSE_MS) e.stopPropagation();
+  };
+  // Capture phase on the stable wrapper: the zoom layer itself is recreated.
+  ['touchstart', 'touchmove', 'touchend', 'touchcancel'].forEach((type) =>
+    image.addEventListener(type, onTouch, { capture: true, passive: true }),
+  );
+  ['mouseover', 'mousemove', 'mouseout'].forEach((type) =>
+    image.addEventListener(type, onCompatMouse, true),
+  );
+}
+
 export default {
   name: 'gallery-swipe',
   pages: ['detail'],
@@ -28,6 +60,7 @@ export default {
       image.dataset.tsInit = 'gallery-swipe';
       image.classList.add('ts-gallery-swipe');
       bind(image);
+      blockTouchZoom(image);
     });
   },
 };

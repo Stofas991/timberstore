@@ -8,4 +8,6 @@ export const SEL = {
   productImage: '.p-image-wrapper .p-image',
   productThumbnail: '.p-thumbnails a.p-thumbnail',
   productThumbnailActiveClass: 'highlighted',
+  // Transparent layer cloud-zoom puts over the main image (rebuilt ~201 ms after every photo switch)
+  productZoomTrap: '.mousetrap',
 };
