@@ -13,6 +13,12 @@ Inventář stavu k 26. 9. 2026 (homepage). Kód se převádí do repa, až když
 | `/user/documents/upload/CSS/timber-empty-cart.js` | zápatí | bez verze v URL | nepřevedeno |
 | `/user/documents/allscript.js?v=111` | zápatí | další vlastní JS | nepřevedeno |
 | inline `DOMContentLoaded` → `.custom-footer__o…` (paymentBox) | zápatí | inline skript v HTML kódu | nepřevedeno |
+| inline skript `timber-page-loading` + `<style>` s `html.timber-page-loading body{visibility:hidden}` | záhlaví | **skryje celou stránku až do DOMContentLoaded (max 1,5 s)** — pravděpodobně zhoršuje LCP, kandidát na výkonovou kartu | nepřevedeno |
+| inline `<style>` — úpravy detailu, filtrů, welcome boxu, hlavičky a košíku (desktop breakpointy) | záhlaví | ~60 pravidel | nepřevedeno |
+| inline `<style>` — `.top-category-addon` (dlaždice kategorií v menu) | záhlaví | hodně `!important` | nepřevedeno |
+| `/user/documents/upload/CSS/timber-search-filter.css?v=173` | záhlaví | **zakomentováno** — nenačítá se | kandidát na smazání |
+
+Záloha celého záhlaví k 26. 9. 2026: [`shoptet/backup/2026-09-26-zahlavi.html`](shoptet/backup/2026-09-26-zahlavi.html). `timber-menu.js` v poli Záhlaví není, načítá se odjinud (ověřit, odkud).
 
 ## Doplňky a šablona (třetí strany — neupravujeme, jen evidujeme)
 | Co | Soubory | Poznámka |
