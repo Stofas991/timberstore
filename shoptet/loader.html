@@ -2,11 +2,10 @@
   Timberstore loader — the ONLY custom code pasted into Shoptet
   (Administrace → Vzhled a obsah → Editor HTML kódu → Záhlaví).
   Production version = PROD. Change it only here. See CONTRIBUTING.md 3.1.
-  Before first use: replace GITHUB_OWNER with the GitHub account that owns this repo.
 -->
 <script>
 (function () {
-  var BASE = 'https://cdn.jsdelivr.net/gh/GITHUB_OWNER/timberstore@';
+  var BASE = 'https://cdn.jsdelivr.net/gh/Stofas991/timberstore@';
   var PROD = 'v0.1.0'; // ← production version
   var q = location.search.match(/[?&]ts_preview=([\w.\-]+)/);
   if (q) document.cookie = q[1] === 'off'
