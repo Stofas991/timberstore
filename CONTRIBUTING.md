@@ -121,20 +121,24 @@ V záhlaví Shoptetu je jen tento loader (zdroj v repu: `shoptet/loader.html`). 
 ```html
 <script>
 (function () {
-  var BASE = 'https://cdn.jsdelivr.net/gh/<user>/<repo>@';
-  var PROD = 'v1.4.0'; // ← produkční verze
+  /* jshint evil: true */ // document.write below is intentional (render-blocking CSS)
+  var BASE = 'https://cdn.jsdelivr.net/gh/Timberstore/timberstore@';
+  var PROD = 'v1.4.0'; // ← produkční verze ('' = vypnuto pro zákazníky)
   var q = location.search.match(/[?&]ts_preview=([\w.\-]+)/);
-  if (q) document.cookie = q[1] === 'off'
-    ? 'ts_preview=; max-age=0; path=/'
-    : 'ts_preview=' + q[1] + '; max-age=604800; path=/';
+  if (q) {
+    document.cookie = q[1] === 'off' ? 'ts_preview=; max-age=0; path=/' : 'ts_preview=' + q[1] + '; max-age=604800; path=/';
+  }
   var c = document.cookie.match(/(?:^|; )ts_preview=([\w.\-]+)/);
   var ok = c && /^(v\d+\.\d+\.\d+(-rc\.\d+)?|[0-9a-f]{7,40})$/.test(c[1]);
   var v = ok ? c[1] : PROD;
   window.TimberLoader = { version: v, preview: !!ok };
   if (!v) return; // PROD = '' → zákazníci nenačtou nic, funguje jen preview
-  // document.write: CSS blokuje vykreslení (bez probliknutí), JS je defer (neblokuje)
+  // CSS přes document.write: blokuje vykreslení (bez probliknutí)
   document.write('<link rel="stylesheet" href="' + BASE + v + '/dist/timber.min.css">');
-  document.write('<script defer src="' + BASE + v + '/dist/timber.min.js"><\/script>');
+  // JS jako element: neblokuje. Žádné "<script" uvnitř řetězce — kontrola kódu v editoru Shoptetu na tom padá.
+  var s = document.createElement('script');
+  s.src = BASE + v + '/dist/timber.min.js';
+  document.head.appendChild(s);
 })();
 </script>
 ```
