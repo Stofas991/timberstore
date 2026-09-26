@@ -1,0 +1,5 @@
+/* Top info bar (Cookies • Doprava a platba • …).
+   Drobnosti · a separator dot is also drawn after the last link. */
+.top-navigation-bar-menu > li:last-child::after {
+  display: none !important; /* the dot may come from legacy CSS with !important */
+}

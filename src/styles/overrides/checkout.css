@@ -1,0 +1,13 @@
+/* Checkout (cart steps).
+   Drobnosti · the "Späť" button under "Pokračovať" is styled as a second button and
+   pulls attention away from continuing. Turn it into a quiet text link.
+   !important: the pill look comes from !important rules in the legacy CSS. */
+.ordering-process .next-step a.next-step-back {
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  color: var(--ts-color-muted) !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  text-decoration: underline;
+}

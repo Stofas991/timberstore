@@ -2,7 +2,9 @@
 :root {
   --ts-color-accent: #d4884a; /* btn-primary on timberstore.sk */
   --ts-color-text: #0f0f0f;
+  --ts-color-muted: #818394; /* Shoptet's secondary text (e.g. back links) */
   --ts-color-bg: #fff;
+  --ts-shadow-text-on-photo: 0 1px 2px rgb(0 0 0 / 45%), 0 0 14px rgb(0 0 0 / 35%);
   --ts-radius: 4px;
   --ts-space-1: 4px;
   --ts-space-2: 8px;

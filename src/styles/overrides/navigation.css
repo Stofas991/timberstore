@@ -1,0 +1,17 @@
+/* Main menu dropdown (desktop).
+   Drobnosti · "black line above the submenu": when a submenu opens Shoptet dims the page
+   (#cboxOverlay). The white panel starts 2 px below the orange bar and its white
+   backdrop (::before in timber-custom.css) stops 9 px short of the right edge, so the
+   dark overlay shows through as a line. Paint the panel white edge to edge instead.
+   !important: beats the !important rules in timber-custom.css (legacy). */
+@media (min-width: 768px) {
+  #navigation .menu-level-2 {
+    box-shadow: 0 0 0 100vmax var(--ts-color-bg) !important;
+    /* Horizontal full bleed without a horizontal scrollbar; -2px closes the gap to the bar. */
+    clip-path: inset(-2px -100vmax 0);
+  }
+
+  #navigation .menu-level-2::before {
+    display: none !important;
+  }
+}

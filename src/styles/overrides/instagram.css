@@ -1,0 +1,10 @@
+/* Homepage Instagram block.
+   Drobnosti · on mobile 4 photos in 3 columns leave the 4th alone on a grey strip.
+   Use a 2 × 2 grid there. max-width: only the mobile layout is wrong, desktop keeps
+   Shoptet's 4 columns. */
+@media (max-width: 767px) {
+  .instagram-widget.columns-4 .instagram-widget-item {
+    flex-basis: 50%;
+    width: 50%;
+  }
+}

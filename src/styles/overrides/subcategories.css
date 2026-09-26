@@ -1,0 +1,11 @@
+/* Subcategory tiles at the top of a category.
+   M5 · on mobile the name gets only 65 px of a 105 px tile, so longer names are cut
+   ("Kancelárs…", "Dverové kľučky, závesy,…"). Slovak hyphenation (<html lang="sk">)
+   and one more line fit every current name.
+   !important: beats the !important rules in timber-custom.css (legacy). */
+@media (max-width: 767px) {
+  .subcategories li .text {
+    hyphens: auto;
+    -webkit-line-clamp: 4 !important;
+  }
+}
