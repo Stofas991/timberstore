@@ -245,7 +245,7 @@ E-shop zůstává na Shoptetu. Na serveru běží **jen pomocné úlohy**: staho
 | `ADMIN-CHANGES.md` | Změny v adminu Shoptetu: co, kde, proč, **původní stav**, datum, karta |
 
 ### 5.3 Účty a vlastnictví
-- **GitHub repo** pod účtem/organizací glos-optimalizace — převoditelné na klienta při případném předání.
+- **GitHub repo** v samostatné organizaci **Timberstore**, vlastněné firmou klienta (kontakt info@timberstore.sk). Klient i Kryštof jsou Owner — klient může přidat jiného vývojáře a odebrat přístupy i bez Kryštofa. Samostatná organizace (ne glos-optimalizace), aby klient neviděl repa jiných klientů.
 - **Hetzner Cloud** na účtu klienta (platí provoz), Kryštof jako člen projektu. Na serveru neběží úlohy jiných klientů. Když spolupráce skončí, nic se nerozbije.
 - **Shoptet admin** přes vlastní uživatelský účet, ne sdílené přihlášení klienta.
 
