@@ -14,7 +14,9 @@
    !important: the cards are styled by the template and by timber-custom.css
    (legacy) with !important; list mode has to win over all of it. */
 
-.ts-view-switch,
+/* :root raises specificity above Apollo's `.category-header div { display: block }`
+   (the switch sits inside .category-header). */
+:root .ts-view-switch,
 .ts-product-table-head {
   display: none;
 }
@@ -42,7 +44,7 @@
 
 @media (min-width: 992px) {
   /* ---------- view switch ---------- */
-  .ts-view-switch {
+  :root .ts-view-switch {
     display: inline-flex;
     align-items: center;
     gap: var(--ts-space-1);
