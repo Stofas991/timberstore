@@ -12,8 +12,9 @@ npm run lint
 
 ## Vydání
 ```bash
-npm run release:rc     # v0.2.0-rc.0 → otestovat přes preview
-npm run release        # minor verze (v0.2.0), build, tag, push
+npm run release:rc       # první testovací verze další minor (v0.1.0 → v0.2.0-rc.0)
+npm run release:rc:next  # další testovací verze po opravě (v0.2.0-rc.0 → v0.2.0-rc.1)
+npm run release          # finální verze (v0.2.0-rc.1 → v0.2.0), build, tag, push
 npm run release:patch  # opravná verze (v0.2.1)
 ```
 Po vydání změnit `PROD` v loaderu v Shoptetu (`shoptet/loader.html`).

@@ -10,7 +10,8 @@
     "format": "prettier --write .",
     "release": "npm version minor",
     "release:patch": "npm version patch",
-    "release:rc": "npm version prerelease --preid rc",
+    "release:rc": "npm version preminor --preid rc",
+    "release:rc:next": "npm version prerelease --preid rc",
     "version": "npm run lint && npm run build && git add dist",
     "postversion": "git push --follow-tags"
   },

@@ -21,3 +21,4 @@ Inventář stavu k 26. 9. 2026 (homepage). Kód se převádí do repa, až když
 | Propojení produktů (webotvurci) — „Kamarádi" / Všetky varianty | `plugin-product-interconnection/...` | viz D2, D5, P8 |
 | Násobky objednávky (dominikmartini) | `addons/dominikmartini/multiply_order/...` | |
 | Hlavní slider homepage | nativní Shoptet `#carousel` (Bootstrap 3 carousel) | M1 přidává swipe modulem `carousel-swipe` |
+| Galerie na detailu produktu | nativní Shoptet `.p-image` + `.p-thumbnails` (cloud-zoom, colorbox) | M1 přidává swipe modulem `gallery-swipe` (kliká na náhledy) |

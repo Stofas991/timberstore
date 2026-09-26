@@ -4,4 +4,8 @@ export const SEL = {
   // Homepage banner carousel (Bootstrap 3 carousel rendered by Shoptet)
   carousel: '#carousel.carousel',
   carouselItem: '.item',
+  // Product detail gallery: main image + thumbnails (verified 2026-09-26)
+  productImage: '.p-image-wrapper .p-image',
+  productThumbnail: '.p-thumbnails a.p-thumbnail',
+  productThumbnailActiveClass: 'highlighted',
 };
