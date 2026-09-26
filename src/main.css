@@ -5,6 +5,9 @@
 @import './modules/carousel-swipe/carousel-swipe.css';
 @import './modules/gallery-swipe/gallery-swipe.css';
 
+/* Legacy, imported verbatim until rewritten */
+@import './legacy/list-view/list-view.css';
+
 /* Shoptet overrides (one file per component) */
 @import './styles/overrides/top-bar.css';
 @import './styles/overrides/header.css';

@@ -1,0 +1,1566 @@
+/* LEGACY — imported verbatim for C3 (2026-09-26), see LEGACY.md.
+   Source: client's unpublished working copy of timber-custom.css lines 2071–3633 (Desktop), the part appended
+   after the live version. Not our code style; replaced by the C3 module. */
+/* =========================================================
+   TIMBER STORE – GRID / LIST VIEW v19
+   VERIFIED DOM + RUNTIME AMOUNT
+   ========================================================= */
+
+@media (min-width: 992px) {
+
+    /* switch */
+    body.type-category .timber-view-switch {
+        display: inline-flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        align-items: center !important;
+        gap: 4px !important;
+        flex: 0 0 auto !important;
+        order: -1 !important;
+        margin: 0 8px 0 0 !important;
+        padding: 4px !important;
+        border: 1px solid #E2E5E9 !important;
+        border-radius: 9px !important;
+        background: #F6F7F8 !important;
+    }
+
+    body.type-category .timber-view-switch__label {
+        margin: 0 7px 0 4px !important;
+        color: #707784 !important;
+        font-size: 12px !important;
+        font-weight: 700 !important;
+        white-space: nowrap !important;
+    }
+
+    body.type-category .timber-view-switch__button {
+        width: 36px !important;
+        height: 35px !important;
+        min-width: 36px !important;
+        min-height: 35px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border: 0 !important;
+        border-radius: 7px !important;
+        background: transparent !important;
+        color: #697282 !important;
+        cursor: pointer !important;
+    }
+
+    body.type-category .timber-view-switch__button.is-active {
+        background: #D4884A !important;
+        color: #FFFFFF !important;
+    }
+
+    body.type-category .timber-view-switch__button svg {
+        width: 18px !important;
+        height: 18px !important;
+        fill: currentColor !important;
+    }
+
+    /* six columns */
+    body.type-category .timber-v19-header,
+    body.type-category #products.ts-view-list > .product > .p {
+        display: grid !important;
+        grid-template-columns:
+            minmax(330px, 1fr)
+            92px
+            128px
+            125px
+            112px
+            120px !important;
+        column-gap: 12px !important;
+        align-items: center !important;
+        box-sizing: border-box !important;
+    }
+
+    body.type-category .timber-v19-header {
+        min-height: 42px !important;
+        margin: 10px 0 0 !important;
+        padding: 0 14px !important;
+        border: 1px solid #E4E7EB !important;
+        border-bottom: 0 !important;
+        border-radius: 12px 12px 0 0 !important;
+        background: #F5F6F7 !important;
+        color: #6F7885 !important;
+        font-size: 10.5px !important;
+        font-weight: 800 !important;
+        text-transform: uppercase !important;
+    }
+
+    body.type-category .timber-v19-header > div:nth-child(5),
+    body.type-category .timber-v19-header > div:nth-child(6) {
+        text-align: center !important;
+    }
+
+    /* wrapper */
+    body.type-category #products.ts-view-list {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 0 24px !important;
+        padding: 0 !important;
+        border: 1px solid #E4E7EB !important;
+        border-radius: 0 0 12px 12px !important;
+        background: #FFFFFF !important;
+        overflow: visible !important;
+    }
+
+    body.type-category #products.ts-view-list > .product {
+        display: block !important;
+        float: none !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-height: 0 !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        border-bottom: 1px solid #ECEEF1 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: #FFFFFF !important;
+        overflow: visible !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p {
+        width: 100% !important;
+        min-height: 82px !important;
+        height: 82px !important;
+        margin: 0 !important;
+        padding: 8px 14px !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: #FFFFFF !important;
+        overflow: visible !important;
+    }
+
+    /* Exact audited wrappers only */
+    body.type-category #products.ts-view-list > .product > .p > .p-in,
+    body.type-category #products.ts-view-list > .product > .p > .p-in > .p-in-in,
+    body.type-category #products.ts-view-list > .product > .p > .p-in > .p-bottom,
+    body.type-category #products.ts-view-list > .product > .p > .p-in > .p-bottom > .p-tools {
+        display: contents !important;
+    }
+
+    /* image */
+    body.type-category #products.ts-view-list > .product > .p > a.image {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        width: 64px !important;
+        height: 60px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        align-self: center !important;
+        justify-self: start !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > a.image > img {
+        max-width: 60px !important;
+        max-height: 56px !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+
+    /* clickable name */
+    body.type-category #products.ts-view-list > .product > .p > .p-in > .p-in-in > a.name {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        margin: 0 !important;
+        padding: 0 0 0 76px !important;
+        min-width: 0 !important;
+        align-self: center !important;
+        justify-self: stretch !important;
+        color: #20242A !important;
+        font-size: 14px !important;
+        line-height: 1.3 !important;
+        font-weight: 800 !important;
+        text-align: left !important;
+        text-decoration: none !important;
+        overflow: hidden !important;
+        max-height: calc(1.3em * 3) !important;
+        pointer-events: auto !important;
+    }
+
+    /* code */
+    body.type-category #products.ts-view-list > .product > .p > .p-code {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        position: static !important;
+        inset: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        align-self: center !important;
+        justify-self: start !important;
+        color: #6F7885 !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        white-space: nowrap !important;
+    }
+
+    /* availability */
+    body.type-category #products.ts-view-list > .product > .p > .p-in > .p-bottom .p-tools > .availability {
+        grid-column: 3 !important;
+        grid-row: 1 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        align-self: center !important;
+        justify-self: start !important;
+        font-size: 11.5px !important;
+        line-height: 1.2 !important;
+        font-weight: 800 !important;
+    }
+
+    /* price */
+    body.type-category #products.ts-view-list > .product > .p > .p-in > .p-bottom [data-testid="productCardPrice"] {
+        grid-column: 4 !important;
+        grid-row: 1 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        align-self: center !important;
+        justify-self: start !important;
+        text-align: left !important;
+    }
+
+    /* native form direct child .product-btn */
+    body.type-category #products.ts-view-list > .product > .p > .product-btn {
+        grid-column: 5 / 7 !important;
+        grid-row: 1 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        align-self: center !important;
+        justify-self: stretch !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: grid !important;
+        grid-template-columns: 112px 120px !important;
+        column-gap: 10px !important;
+        align-items: center !important;
+    }
+
+    /* our visual controller; hidden amount stays authoritative */
+    body.type-category .timber-v19-qty {
+        grid-column: 1 !important;
+        width: 112px !important;
+        height: 38px !important;
+        display: grid !important;
+        grid-template-columns: 36px 40px 36px !important;
+        align-items: stretch !important;
+        justify-self: stretch !important;
+        border: 1px solid #DFE4E8 !important;
+        border-radius: 10px !important;
+        background: #FFFFFF !important;
+        overflow: hidden !important;
+    }
+
+    body.type-category .timber-v19-qty__btn {
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        background: #F7F8F9 !important;
+        color: #26313D !important;
+        font-size: 18px !important;
+        font-weight: 700 !important;
+        line-height: 38px !important;
+        text-align: center !important;
+        cursor: pointer !important;
+    }
+
+    body.type-category .timber-v19-qty__value {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #FFFFFF !important;
+        color: #26313D !important;
+        font-size: 12px !important;
+        font-weight: 800 !important;
+        border-left: 1px solid #E7EAED !important;
+        border-right: 1px solid #E7EAED !important;
+        white-space: nowrap !important;
+    }
+
+    /* native cart button */
+    body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action > [data-testid="buttonAddToCart"],
+    body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action > .btn-cart,
+    body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action > .add-to-cart-button {
+        grid-column: 2 !important;
+        width: 120px !important;
+        min-width: 120px !important;
+        max-width: 120px !important;
+        margin: 0 !important;
+        position: relative !important;
+        justify-self: stretch !important;
+        text-align: center !important;
+    }
+
+    /* cart count badge */
+    body.type-category .timber-v19-cart-button {
+        position: relative !important;
+    }
+
+    body.type-category .timber-v19-cart-button.has-cart-quantity {
+        padding-right: 28px !important;
+    }
+
+    body.type-category .timber-v19-cart-badge {
+        position: absolute !important;
+        top: -8px !important;
+        right: -8px !important;
+        z-index: 5 !important;
+        min-width: 22px !important;
+        height: 22px !important;
+        padding: 0 5px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border: 2px solid #FFFFFF !important;
+        border-radius: 999px !important;
+        background: #2E9C42 !important;
+        color: #FFFFFF !important;
+        font-size: 10px !important;
+        line-height: 18px !important;
+        font-weight: 900 !important;
+        box-shadow: 0 2px 6px rgba(0,0,0,.15) !important;
+    }
+
+    body.type-category .timber-v19-cart-badge[hidden] {
+        display: none !important;
+    }
+
+    /* compact list */
+    body.type-category #products.ts-view-list .p-desc,
+    body.type-category #products.ts-view-list .description,
+    body.type-category #products.ts-view-list .stars-wrapper,
+    body.type-category #products.ts-view-list .stars-placeholder {
+        display: none !important;
+    }
+}
+
+@media (max-width: 991px) {
+    body.type-category .timber-view-switch,
+    body.type-category .timber-v19-header,
+    body.type-category .timber-v19-qty {
+        display: none !important;
+    }
+}
+
+
+
+/* =========================================================
+   TIMBER STORE – v20 LIST ALIGNMENT FIX
+   Fixes only layout/positioning. JS/cart/multiples unchanged.
+   ========================================================= */
+@media (min-width: 992px) {
+
+    /* Give each row enough breathing room and stop Shoptet absolute offsets. */
+    body.type-category #products.ts-view-list > .product > .p {
+        min-height: 76px !important;
+        height: 76px !important;
+        align-items: center !important;
+    }
+
+    /* PRODUCT */
+    body.type-category #products.ts-view-list > .product > .p > a.image,
+    body.type-category #products.ts-view-list > .product > .p > .p-in > .p-in-in > a.name,
+    body.type-category #products.ts-view-list > .product > .p > .p-code,
+    body.type-category #products.ts-view-list > .product > .p > .p-in > .p-bottom [data-testid="productCardPrice"],
+    body.type-category #products.ts-view-list > .product > .p > .product-btn,
+    body.type-category #products.ts-view-list > .product > .p > .p-in > .p-bottom .p-tools > .availability {
+        position: static !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        transform: none !important;
+    }
+
+    /* Availability is a real grid item in column 3. */
+    body.type-category #products.ts-view-list > .product > .p > .p-in > .p-bottom .p-tools > .availability {
+        grid-column: 3 !important;
+        grid-row: 1 !important;
+        align-self: center !important;
+        justify-self: start !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 1.15 !important;
+        text-align: left !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        z-index: auto !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > .p-in > .p-bottom .p-tools > .availability,
+    body.type-category #products.ts-view-list > .product > .p > .p-in > .p-bottom .p-tools > .availability * {
+        font-size: 11.5px !important;
+        line-height: 1.15 !important;
+        font-weight: 800 !important;
+    }
+
+    /* Price locked to column 4 and vertically centred. */
+    body.type-category #products.ts-view-list > .product > .p > .p-in > .p-bottom [data-testid="productCardPrice"] {
+        grid-column: 4 !important;
+        grid-row: 1 !important;
+        align-self: center !important;
+        justify-self: start !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+    }
+
+    /* Native form locked to quantity + cart columns. */
+    body.type-category #products.ts-view-list > .product > .p > .product-btn {
+        grid-column: 5 / 7 !important;
+        grid-row: 1 !important;
+        align-self: center !important;
+        justify-self: stretch !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action {
+        display: grid !important;
+        grid-template-columns: 112px 120px !important;
+        column-gap: 10px !important;
+        align-items: center !important;
+        justify-content: end !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    body.type-category #products.ts-view-list .timber-v19-qty {
+        grid-column: 1 !important;
+        align-self: center !important;
+        justify-self: stretch !important;
+        margin: 0 !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action > [data-testid="buttonAddToCart"],
+    body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action > .btn-cart,
+    body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action > .add-to-cart-button {
+        grid-column: 2 !important;
+        align-self: center !important;
+        justify-self: stretch !important;
+        margin: 0 !important;
+    }
+
+    /* Keep code cleanly centred in its column. */
+    body.type-category #products.ts-view-list > .product > .p > .p-code {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        align-self: center !important;
+        justify-self: start !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 1.15 !important;
+    }
+
+    /* Keep image/title compact and vertically centred. */
+    body.type-category #products.ts-view-list > .product > .p > a.image {
+        align-self: center !important;
+        justify-self: start !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > .p-in > .p-in-in > a.name {
+        align-self: center !important;
+        justify-self: stretch !important;
+        margin: 0 !important;
+    }
+
+    /* Header follows exact row columns. */
+    body.type-category .timber-v19-header {
+        grid-template-columns:
+            minmax(330px, 1fr)
+            92px
+            128px
+            125px
+            112px
+            120px !important;
+        align-items: center !important;
+    }
+}
+
+
+/* =========================================================
+   TIMBER STORE – v21 AVAILABILITY VISUAL PROXY
+   Original Shoptet availability stays in DOM untouched.
+   The proxy is display-only and guarantees column placement.
+   ========================================================= */
+@media (min-width: 992px) {
+
+    /* Hide only the original visual label in LIST to prevent duplicates.
+       Its DOM remains intact for Shoptet/add-ons. */
+    body.type-category #products.ts-view-list
+    > .product > .p > .p-in > .p-bottom .p-tools > .availability {
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+    body.type-category #products.ts-view-list
+    > .product > .p > .timber-v21-availability {
+        display: block !important;
+        grid-column: 3 !important;
+        grid-row: 1 !important;
+        align-self: center !important;
+        justify-self: start !important;
+        position: static !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        font-size: 11.5px !important;
+        line-height: 1.15 !important;
+        font-weight: 800 !important;
+        text-align: left !important;
+        white-space: normal !important;
+        z-index: 2 !important;
+    }
+
+    body.type-category #products.ts-view-list
+    > .product > .p > .timber-v21-availability.is-local-stock {
+        color: #2E9C42 !important;
+    }
+
+    body.type-category #products.ts-view-list
+    > .product > .p > .timber-v21-availability.is-central-stock {
+        color: #D4884A !important;
+    }
+
+    body.type-category #products.ts-view-list
+    > .product > .p > .timber-v21-availability.is-other-stock {
+        color: #6F7885 !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .timber-v21-availability {
+        display: none !important;
+    }
+}
+
+
+/* =========================================================
+   TIMBER STORE – v22 VISUAL POLISH + SORTING
+   Keeps v19/v20 quantity/cart/load-more mechanics intact.
+   ========================================================= */
+@media (min-width: 992px) {
+
+    /* Bigger, cleaner list */
+    body.type-category .timber-v19-header,
+    body.type-category #products.ts-view-list > .product > .p {
+        grid-template-columns:
+            minmax(390px, 1fr)
+            100px
+            145px
+            140px
+            125px
+            138px !important;
+        column-gap: 16px !important;
+    }
+
+    body.type-category .timber-v19-header {
+        min-height: 46px !important;
+        padding: 0 18px !important;
+        font-size: 11px !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p {
+        min-height: 92px !important;
+        height: 92px !important;
+        padding: 10px 18px !important;
+    }
+
+    /* Hide clutter that was auto-flowing under image/name. */
+    body.type-category #products.ts-view-list .ratings-wrapper,
+    body.type-category #products.ts-view-list .stars-wrapper,
+    body.type-category #products.ts-view-list .stars-placeholder,
+    body.type-category #products.ts-view-list .p-desc,
+    body.type-category #products.ts-view-list .description,
+    body.type-category #products.ts-view-list .product-appendixes,
+    body.type-category #products.ts-view-list .flag,
+    body.type-category #products.ts-view-list .flags,
+    body.type-category #products.ts-view-list .p-in-in > :not(a.name):not(.name) {
+        display: none !important;
+    }
+
+    /* Product image/name larger and aligned */
+    body.type-category #products.ts-view-list > .product > .p > a.image {
+        width: 70px !important;
+        height: 68px !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > a.image > img {
+        max-width: 66px !important;
+        max-height: 64px !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > .p-in > .p-in-in > a.name {
+        padding-left: 86px !important;
+        font-size: 15px !important;
+        line-height: 1.3 !important;
+        max-height: calc(1.3em * 3) !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > .p-code {
+        font-size: 12px !important;
+    }
+
+    /* Availability: visual proxy is guaranteed in column 3 */
+    body.type-category #products.ts-view-list > .product > .p > .timber-v21-availability {
+        display: block !important;
+        grid-column: 3 !important;
+        grid-row: 1 !important;
+        align-self: center !important;
+        justify-self: start !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+        font-weight: 800 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    /* Price always fully visible */
+    body.type-category #products.ts-view-list > .product > .p > .p-in > .p-bottom [data-testid="productCardPrice"] {
+        grid-column: 4 !important;
+        grid-row: 1 !important;
+        align-self: center !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        overflow: visible !important;
+        white-space: normal !important;
+    }
+
+    body.type-category #products.ts-view-list [data-testid="productCardPrice"] .price,
+    body.type-category #products.ts-view-list [data-testid="productCardPrice"] .price-final,
+    body.type-category #products.ts-view-list [data-testid="productCardPrice"] strong {
+        font-size: 16px !important;
+        line-height: 1.15 !important;
+        font-weight: 800 !important;
+        white-space: nowrap !important;
+    }
+
+    body.type-category #products.ts-view-list [data-testid="productCardPrice"] .price-standard,
+    body.type-category #products.ts-view-list [data-testid="productCardPrice"] .price-save,
+    body.type-category #products.ts-view-list [data-testid="productCardPrice"] .price-measure,
+    body.type-category #products.ts-view-list [data-testid="productCardPrice"] small {
+        font-size: 11px !important;
+        line-height: 1.2 !important;
+    }
+
+    /* Quantity and cart with proper separation */
+    body.type-category #products.ts-view-list > .product > .p > .product-btn {
+        grid-column: 5 / 7 !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action {
+        grid-template-columns: 125px 138px !important;
+        column-gap: 18px !important;
+    }
+
+    body.type-category #products.ts-view-list .timber-v19-qty {
+        width: 125px !important;
+        height: 42px !important;
+        grid-template-columns: 38px 49px 38px !important;
+        border-radius: 10px !important;
+    }
+
+    body.type-category #products.ts-view-list .timber-v19-qty__btn {
+        font-size: 18px !important;
+        line-height: 42px !important;
+    }
+
+    body.type-category #products.ts-view-list .timber-v19-qty__value {
+        font-size: 13px !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action > [data-testid="buttonAddToCart"],
+    body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action > .btn-cart,
+    body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action > .add-to-cart-button {
+        width: 138px !important;
+        min-width: 138px !important;
+        max-width: 138px !important;
+        min-height: 42px !important;
+        height: 42px !important;
+        font-size: 13px !important;
+        border-radius: 22px !important;
+    }
+
+    /* Clickable sort headers */
+    body.type-category .timber-v22-sort {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+        color: inherit !important;
+        font: inherit !important;
+        font-weight: 800 !important;
+        text-transform: uppercase !important;
+        cursor: pointer !important;
+        box-shadow: none !important;
+    }
+
+    body.type-category .timber-v22-sort:hover {
+        color: #D4884A !important;
+    }
+
+    body.type-category .timber-v22-sort__arrow {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-width: 12px !important;
+        font-size: 14px !important;
+        line-height: 1 !important;
+    }
+}
+
+/* Do not let mouse-wheel over the cart preview scroll the page behind it. */
+#cart-widget[aria-hidden="false"] {
+    overscroll-behavior: contain !important;
+}
+
+
+/* =========================================================
+   TIMBER STORE – v23 TABLE POLISH
+   Better alignment + proper chevrons + spacing
+   ========================================================= */
+@media (min-width: 992px) {
+
+    body.type-category .timber-v19-header,
+    body.type-category #products.ts-view-list > .product > .p {
+        grid-template-columns:
+            minmax(285px, 1fr)
+            92px
+            132px
+            140px
+            122px
+            142px !important;
+        column-gap: 14px !important;
+    }
+
+    body.type-category .timber-v19-header {
+        min-height: 48px !important;
+        padding: 0 16px !important;
+        border-radius: 12px 12px 0 0 !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p {
+        min-height: 88px !important;
+        height: 88px !important;
+        padding: 10px 16px !important;
+    }
+
+    /* keep every cell vertically centered */
+    body.type-category #products.ts-view-list > .product > .p > .p-code,
+    body.type-category #products.ts-view-list > .product > .p > .timber-v21-availability,
+    body.type-category #products.ts-view-list > .product > .p > .p-in > .p-bottom [data-testid="productCardPrice"],
+    body.type-category #products.ts-view-list > .product > .p > .product-btn {
+        align-self: center !important;
+    }
+
+    /* availability */
+    body.type-category #products.ts-view-list > .product > .p > .timber-v21-availability {
+        grid-column: 3 !important;
+        grid-row: 1 !important;
+        justify-self: start !important;
+        width: auto !important;
+        max-width: 128px !important;
+        font-size: 12px !important;
+        line-height: 1.2 !important;
+        white-space: normal !important;
+    }
+
+    /* price */
+    body.type-category #products.ts-view-list > .product > .p > .p-in > .p-bottom [data-testid="productCardPrice"] {
+        grid-column: 4 !important;
+        grid-row: 1 !important;
+        width: 140px !important;
+        min-width: 140px !important;
+        max-width: 140px !important;
+        overflow: visible !important;
+    }
+
+    body.type-category #products.ts-view-list [data-testid="productCardPrice"] .price,
+    body.type-category #products.ts-view-list [data-testid="productCardPrice"] .price-final,
+    body.type-category #products.ts-view-list [data-testid="productCardPrice"] strong {
+        font-size: 16px !important;
+        line-height: 1.1 !important;
+        white-space: nowrap !important;
+    }
+
+    /* quantity + cart: visually separated */
+    body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action {
+        grid-template-columns: 122px 142px !important;
+        column-gap: 16px !important;
+    }
+
+    body.type-category #products.ts-view-list .timber-v19-qty {
+        width: 122px !important;
+        grid-template-columns: 36px 50px 36px !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action > [data-testid="buttonAddToCart"],
+    body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action > .btn-cart,
+    body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action > .add-to-cart-button {
+        width: 142px !important;
+        min-width: 142px !important;
+        max-width: 142px !important;
+    }
+
+    /* prettier sorting headers */
+    body.type-category .timber-v23-sort {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 7px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+        color: inherit !important;
+        font: inherit !important;
+        font-weight: 800 !important;
+        text-transform: uppercase !important;
+        cursor: pointer !important;
+        box-shadow: none !important;
+        white-space: nowrap !important;
+    }
+
+    body.type-category .timber-v23-sort:hover {
+        color: #D4884A !important;
+    }
+
+    body.type-category .timber-v23-sort__icon {
+        width: 12px !important;
+        height: 17px !important;
+        display: inline-flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 1px !important;
+    }
+
+    body.type-category .timber-v23-sort__icon .up,
+    body.type-category .timber-v23-sort__icon .down {
+        width: 0 !important;
+        height: 0 !important;
+        display: block !important;
+        border-left: 4px solid transparent !important;
+        border-right: 4px solid transparent !important;
+        opacity: .45 !important;
+    }
+
+    body.type-category .timber-v23-sort__icon .up {
+        border-bottom: 5px solid currentColor !important;
+    }
+
+    body.type-category .timber-v23-sort__icon .down {
+        border-top: 5px solid currentColor !important;
+    }
+
+    body.type-category .timber-v23-sort.is-asc .timber-v23-sort__icon .up,
+    body.type-category .timber-v23-sort.is-desc .timber-v23-sort__icon .down {
+        opacity: 1 !important;
+        color: #D4884A !important;
+    }
+
+    body.type-category .timber-v23-sort.is-asc .timber-v23-sort__icon .down,
+    body.type-category .timber-v23-sort.is-desc .timber-v23-sort__icon .up {
+        opacity: .25 !important;
+    }
+}
+
+
+/* =========================================================
+   TIMBER STORE – v24 FINAL ROW / SORT INTERACTION
+   - no text movement / no list animations
+   - single menu-like chevron rotates
+   - availability sort uses clean page reload
+   ========================================================= */
+@media (min-width: 992px) {
+
+    /* Kill the awkward "text sliding / shrinking" effect in list mode. */
+    body.type-category #products.ts-view-list,
+    body.type-category #products.ts-view-list *,
+    body.type-category .timber-v19-header,
+    body.type-category .timber-v19-header * {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    body.type-category #products.ts-view-list > .product,
+    body.type-category #products.ts-view-list > .product:hover,
+    body.type-category #products.ts-view-list > .product > .p,
+    body.type-category #products.ts-view-list > .product:hover > .p {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Stable six-column table. */
+    body.type-category .timber-v19-header,
+    body.type-category #products.ts-view-list > .product > .p {
+        grid-template-columns:
+            minmax(280px, 1fr)
+            86px
+            126px
+            140px
+            120px
+            136px !important;
+        column-gap: 14px !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p {
+        min-height: 84px !important;
+        height: 84px !important;
+        padding: 9px 14px !important;
+        align-items: center !important;
+    }
+
+    body.type-category .timber-v19-header {
+        min-height: 46px !important;
+        height: 46px !important;
+        padding: 0 14px !important;
+        align-items: center !important;
+    }
+
+    /* Every main cell forced onto the same baseline / row. */
+    body.type-category #products.ts-view-list > .product > .p > a.image,
+    body.type-category #products.ts-view-list > .product > .p > .p-in > .p-in-in > a.name,
+    body.type-category #products.ts-view-list > .product > .p > .p-code,
+    body.type-category #products.ts-view-list > .product > .p > .timber-v21-availability,
+    body.type-category #products.ts-view-list > .product > .p > .p-in > .p-bottom [data-testid="productCardPrice"],
+    body.type-category #products.ts-view-list > .product > .p > .product-btn {
+        grid-row: 1 !important;
+        align-self: center !important;
+        transform: none !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > a.image {
+        width: 64px !important;
+        height: 58px !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > a.image > img {
+        max-width: 60px !important;
+        max-height: 54px !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > .p-in > .p-in-in > a.name {
+        padding-left: 74px !important;
+        font-size: 14px !important;
+        line-height: 1.25 !important;
+        max-height: 2.5em !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > .p-code {
+        grid-column: 2 !important;
+        font-size: 11px !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > .timber-v21-availability {
+        grid-column: 3 !important;
+        width: 126px !important;
+        max-width: 126px !important;
+        font-size: 11.5px !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > .p-in > .p-bottom [data-testid="productCardPrice"] {
+        grid-column: 4 !important;
+        width: 140px !important;
+        min-width: 140px !important;
+        max-width: 140px !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > .product-btn {
+        grid-column: 5 / 7 !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action {
+        grid-template-columns: 120px 136px !important;
+        column-gap: 14px !important;
+        align-items: center !important;
+    }
+
+    body.type-category #products.ts-view-list .timber-v19-qty {
+        width: 120px !important;
+        height: 40px !important;
+        grid-template-columns: 36px 48px 36px !important;
+        margin: 0 !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action > [data-testid="buttonAddToCart"],
+    body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action > .btn-cart,
+    body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action > .add-to-cart-button {
+        width: 136px !important;
+        min-width: 136px !important;
+        max-width: 136px !important;
+        height: 40px !important;
+        min-height: 40px !important;
+        margin: 0 !important;
+    }
+
+    /* Native-menu-like sort control: one chevron that rotates. */
+    body.type-category .timber-v24-sort {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        background: transparent !important;
+        color: inherit !important;
+        font: inherit !important;
+        font-weight: 800 !important;
+        text-transform: uppercase !important;
+        cursor: pointer !important;
+        box-shadow: none !important;
+        white-space: nowrap !important;
+    }
+
+    body.type-category .timber-v24-sort:hover {
+        color: #D4884A !important;
+    }
+
+    body.type-category .timber-v24-chevron {
+        width: 8px !important;
+        height: 8px !important;
+        display: inline-block !important;
+        border-right: 1.7px solid currentColor !important;
+        border-bottom: 1.7px solid currentColor !important;
+        transform: rotate(45deg) !important;
+        transform-origin: 50% 50% !important;
+        transition: transform .18s ease !important;
+        opacity: .85 !important;
+        margin-top: -4px !important;
+    }
+
+    body.type-category .timber-v24-sort.is-desc .timber-v24-chevron {
+        transform: rotate(225deg) !important;
+        margin-top: 4px !important;
+    }
+
+    body.type-category .timber-v24-sort.is-asc .timber-v24-chevron {
+        transform: rotate(45deg) !important;
+    }
+}
+
+/* =========================================================
+   TIMBER STORE – v25 STRICT COLUMN ALIGNMENT (CSS ONLY)
+   No JS/cart/amount/load-more logic changed.
+   ========================================================= */
+@media (min-width: 992px) {
+
+  /* One identical 6-column geometry for header and every row. */
+  body.type-category .timber-v19-header,
+  body.type-category #products.ts-view-list > .product > .p {
+    display: grid !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    grid-template-columns:
+      minmax(300px, 1fr)
+      92px
+      132px
+      142px
+      126px
+      150px !important;
+    column-gap: 18px !important;
+    align-items: center !important;
+  }
+
+  body.type-category .timber-v19-header {
+    padding: 0 18px !important;
+  }
+
+  body.type-category #products.ts-view-list > .product > .p {
+    padding: 9px 18px !important;
+  }
+
+  /* Header cells: place labels exactly over their row columns. */
+  body.type-category .timber-v19-header > div {
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-self: center !important;
+  }
+
+  body.type-category .timber-v19-header > div:nth-child(1),
+  body.type-category .timber-v19-header > div:nth-child(2),
+  body.type-category .timber-v19-header > div:nth-child(3),
+  body.type-category .timber-v19-header > div:nth-child(4) {
+    justify-self: start !important;
+    text-align: left !important;
+  }
+
+  body.type-category .timber-v19-header > div:nth-child(5) {
+    justify-self: center !important;
+    text-align: center !important;
+    width: 126px !important;
+  }
+
+  body.type-category .timber-v19-header > div:nth-child(6) {
+    width: 150px !important;
+  }
+
+  /* Product cells forced into the same columns. */
+  body.type-category #products.ts-view-list > .product > .p > .p-code {
+    grid-column: 2 !important;
+    justify-self: start !important;
+  }
+
+  body.type-category #products.ts-view-list > .product > .p > .timber-v21-availability {
+    grid-column: 3 !important;
+    width: 132px !important;
+    max-width: 132px !important;
+    justify-self: start !important;
+  }
+
+  body.type-category #products.ts-view-list > .product > .p > .p-in > .p-bottom [data-testid="productCardPrice"] {
+    grid-column: 4 !important;
+    width: 142px !important;
+    min-width: 142px !important;
+    max-width: 142px !important;
+    justify-self: start !important;
+  }
+
+  /* The native form spans precisely quantity + cart. */
+  body.type-category #products.ts-view-list > .product > .p > .product-btn {
+    grid-column: 5 / 7 !important;
+    width: 294px !important; /* 126 + 18 gap + 150 */
+    min-width: 294px !important;
+    max-width: 294px !important;
+    justify-self: stretch !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action {
+    display: grid !important;
+    width: 294px !important;
+    min-width: 294px !important;
+    max-width: 294px !important;
+    grid-template-columns: 126px 150px !important;
+    column-gap: 18px !important;
+    align-items: center !important;
+    justify-content: stretch !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body.type-category #products.ts-view-list .timber-v19-qty {
+    grid-column: 1 !important;
+    width: 126px !important;
+    min-width: 126px !important;
+    max-width: 126px !important;
+    height: 40px !important;
+    grid-template-columns: 38px 50px 38px !important;
+    justify-self: stretch !important;
+    margin: 0 !important;
+  }
+
+  body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action > [data-testid="buttonAddToCart"],
+  body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action > .btn-cart,
+  body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action > .add-to-cart-button {
+    grid-column: 2 !important;
+    width: 150px !important;
+    min-width: 150px !important;
+    max-width: 150px !important;
+    height: 40px !important;
+    margin: 0 !important;
+    justify-self: stretch !important;
+  }
+
+  /* Sort labels + one menu-like chevron: fixed baseline, no floating icon. */
+  body.type-category .timber-v24-sort {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 7px !important;
+    min-height: 24px !important;
+    line-height: 24px !important;
+    vertical-align: middle !important;
+  }
+
+  body.type-category .timber-v24-chevron {
+    flex: 0 0 7px !important;
+    width: 7px !important;
+    height: 7px !important;
+    margin: 0 0 3px 0 !important;
+    position: static !important;
+    vertical-align: middle !important;
+  }
+
+  body.type-category .timber-v24-sort.is-desc .timber-v24-chevron {
+    margin: 3px 0 0 0 !important;
+  }
+}
+
+
+
+/* =========================================================
+   TIMBER STORE – v26 DEMOS-LIKE CONTINUOUS TABLE
+   Visual-only refinement. Quantity/cart/AJAX logic unchanged.
+   ========================================================= */
+@media (min-width: 992px) {
+
+    /* Entire list behaves like one continuous table, not cards. */
+    body.type-category #products.ts-view-list {
+        margin-top: 0 !important;
+        border: 1px solid #E7EAEE !important;
+        border-top: 0 !important;
+        border-radius: 0 0 8px 8px !important;
+        background: #fff !important;
+        overflow: hidden !important;
+        box-shadow: none !important;
+    }
+
+    body.type-category .timber-v19-header {
+        border: 1px solid #E7EAEE !important;
+        border-bottom: 1px solid #E2E6EA !important;
+        border-radius: 8px 8px 0 0 !important;
+        background: #F5F7F9 !important;
+        box-shadow: none !important;
+    }
+
+    body.type-category #products.ts-view-list > .product {
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        border-bottom: 1px solid #EEF1F3 !important;
+        border-radius: 0 !important;
+        background: #fff !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+        transition: background-color .12s ease !important;
+    }
+
+    body.type-category #products.ts-view-list > .product:last-child {
+        border-bottom: 0 !important;
+    }
+
+    body.type-category #products.ts-view-list > .product:hover {
+        background: #F2F8FC !important;
+    }
+
+    body.type-category #products.ts-view-list > .product:hover > .p {
+        background: #F2F8FC !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p {
+        min-height: 76px !important;
+        height: 76px !important;
+        padding: 8px 14px !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+
+    /* Exact column geometry shared by header and rows. */
+    body.type-category .timber-v19-header,
+    body.type-category #products.ts-view-list > .product > .p {
+        grid-template-columns:
+            minmax(300px, 1fr)
+            92px
+            132px
+            142px
+            126px
+            154px !important;
+        column-gap: 16px !important;
+        align-items: center !important;
+    }
+
+    body.type-category .timber-v19-header {
+        min-height: 44px !important;
+        height: 44px !important;
+        padding: 0 14px !important;
+        font-size: 10.5px !important;
+        line-height: 1 !important;
+    }
+
+    /* Product image + title */
+    body.type-category #products.ts-view-list > .product > .p > a.image {
+        width: 58px !important;
+        height: 56px !important;
+        margin: 0 !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > a.image > img {
+        max-width: 54px !important;
+        max-height: 52px !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > .p-in > .p-in-in > a.name {
+        padding-left: 68px !important;
+        font-size: 13.5px !important;
+        line-height: 1.25 !important;
+        max-height: 2.5em !important;
+        font-weight: 700 !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > .p-code {
+        font-size: 10.5px !important;
+        font-weight: 700 !important;
+    }
+
+    /* Availability */
+    body.type-category #products.ts-view-list > .product > .p > .timber-v21-availability {
+        grid-column: 3 !important;
+        width: 132px !important;
+        max-width: 132px !important;
+        font-size: 11px !important;
+        line-height: 1.2 !important;
+        font-weight: 700 !important;
+    }
+
+    /* Price */
+    body.type-category #products.ts-view-list > .product > .p > .p-in > .p-bottom [data-testid="productCardPrice"] {
+        grid-column: 4 !important;
+        width: 142px !important;
+        min-width: 142px !important;
+        max-width: 142px !important;
+    }
+
+    body.type-category #products.ts-view-list [data-testid="productCardPrice"] .price,
+    body.type-category #products.ts-view-list [data-testid="productCardPrice"] .price-final,
+    body.type-category #products.ts-view-list [data-testid="productCardPrice"] strong {
+        font-size: 14.5px !important;
+        line-height: 1.1 !important;
+        font-weight: 800 !important;
+    }
+
+    body.type-category #products.ts-view-list [data-testid="productCardPrice"] .price-standard,
+    body.type-category #products.ts-view-list [data-testid="productCardPrice"] .price-save,
+    body.type-category #products.ts-view-list [data-testid="productCardPrice"] .price-measure,
+    body.type-category #products.ts-view-list [data-testid="productCardPrice"] small {
+        font-size: 10px !important;
+        line-height: 1.15 !important;
+    }
+
+    /* Quantity + cart as separate columns with breathing room */
+    body.type-category #products.ts-view-list > .product > .p > .product-btn {
+        grid-column: 5 / 7 !important;
+        width: 100% !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action {
+        grid-template-columns: 126px 154px !important;
+        column-gap: 18px !important;
+        align-items: center !important;
+        justify-content: stretch !important;
+    }
+
+    body.type-category #products.ts-view-list .timber-v19-qty {
+        width: 126px !important;
+        height: 38px !important;
+        grid-template-columns: 38px 50px 38px !important;
+        border-radius: 6px !important;
+        background: #fff !important;
+    }
+
+    body.type-category #products.ts-view-list .timber-v19-qty__btn {
+        line-height: 38px !important;
+        font-size: 16px !important;
+    }
+
+    body.type-category #products.ts-view-list .timber-v19-qty__value {
+        font-size: 12.5px !important;
+    }
+
+    body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action > [data-testid="buttonAddToCart"],
+    body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action > .btn-cart,
+    body.type-category #products.ts-view-list > .product > .p > .product-btn > form.pr-action > .add-to-cart-button {
+        width: 154px !important;
+        min-width: 154px !important;
+        max-width: 154px !important;
+        height: 38px !important;
+        min-height: 38px !important;
+        margin: 0 !important;
+        border-radius: 19px !important;
+        font-size: 12.5px !important;
+        justify-self: end !important;
+    }
+
+    /* Keep the cart button visibly on the right edge of its column. */
+    body.type-category #products.ts-view-list > .product > .p > .product-btn {
+        justify-self: stretch !important;
+    }
+
+    /* Remove visual clutter that may slip under the product image/title. */
+    body.type-category #products.ts-view-list .p-desc,
+    body.type-category #products.ts-view-list .description,
+    body.type-category #products.ts-view-list .stars-wrapper,
+    body.type-category #products.ts-view-list .stars-placeholder,
+    body.type-category #products.ts-view-list .ratings-wrapper,
+    body.type-category #products.ts-view-list .flags,
+    body.type-category #products.ts-view-list .flag,
+    body.type-category #products.ts-view-list .p-in-in > :not(a.name):not(.name) {
+        display: none !important;
+    }
+
+    /* Subtle row highlight exactly like a B2B table. */
+    body.type-category #products.ts-view-list > .product:hover,
+    body.type-category #products.ts-view-list > .product:focus-within {
+        background: #EEF7FC !important;
+    }
+
+    body.type-category #products.ts-view-list > .product:hover > .p,
+    body.type-category #products.ts-view-list > .product:focus-within > .p {
+        background: #EEF7FC !important;
+    }
+}
+
+
+/* =========================================================
+   TIMBER STORE – v27 STABILITY / MODE ISOLATION
+   Fixes:
+   - no GRID flash after Shoptet sorting/AJAX replacement
+   - no LIST-only availability duplicate inside GRID cards
+   - compact quantity/cart row in GRID
+   - advanced-order popup isolated from category LIST CSS
+   ========================================================= */
+
+/* LIST-only visual availability proxy. Native Shoptet availability stays in GRID. */
+@media (min-width: 992px) {
+    body.type-category #products:not(.ts-view-list) .timber-v21-availability {
+        display: none !important;
+    }
+
+    /* GRID: keep the runtime quantity feature, but put it in one clean action row. */
+    body.type-category #products.ts-view-grid > .product > .p > .product-btn > form.pr-action,
+    body.type-category #products:not(.ts-view-list) > .product > .p > .product-btn > form.pr-action {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+
+    body.type-category #products.ts-view-grid .timber-v19-qty,
+    body.type-category #products:not(.ts-view-list) .timber-v19-qty {
+        display: grid !important;
+        flex: 0 0 112px !important;
+        width: 112px !important;
+        min-width: 112px !important;
+        max-width: 112px !important;
+        height: 38px !important;
+        grid-template-columns: 34px 44px 34px !important;
+        margin: 0 !important;
+        border-radius: 8px !important;
+    }
+
+    body.type-category #products.ts-view-grid .timber-v19-qty__btn,
+    body.type-category #products:not(.ts-view-list) .timber-v19-qty__btn {
+        line-height: 38px !important;
+        font-size: 16px !important;
+    }
+
+    body.type-category #products.ts-view-grid > .product > .p > .product-btn > form.pr-action > [data-testid="buttonAddToCart"],
+    body.type-category #products.ts-view-grid > .product > .p > .product-btn > form.pr-action > .btn-cart,
+    body.type-category #products.ts-view-grid > .product > .p > .product-btn > form.pr-action > .add-to-cart-button,
+    body.type-category #products:not(.ts-view-list) > .product > .p > .product-btn > form.pr-action > [data-testid="buttonAddToCart"],
+    body.type-category #products:not(.ts-view-list) > .product > .p > .product-btn > form.pr-action > .btn-cart,
+    body.type-category #products:not(.ts-view-list) > .product > .p > .product-btn > form.pr-action > .add-to-cart-button {
+        flex: 0 1 150px !important;
+        width: auto !important;
+        min-width: 125px !important;
+        max-width: 150px !important;
+        height: 40px !important;
+        margin: 0 !important;
+    }
+
+    /* Native availability must remain separate from the GRID actions. */
+    body.type-category #products:not(.ts-view-list) .availability {
+        position: static !important;
+        transform: none !important;
+    }
+}
+
+/* Advanced order modal: NEVER inherit category list/grid presentation hacks. */
+body.type-category .advanced-order .timber-v19-qty,
+body.type-category .advancedOrder .timber-v19-qty,
+body.type-category #colorbox .advanced-order .timber-v19-qty,
+body.type-category #colorbox .advancedOrder .timber-v19-qty,
+body.type-category .advanced-order .timber-v21-availability,
+body.type-category .advancedOrder .timber-v21-availability,
+body.type-category #colorbox .advanced-order .timber-v21-availability,
+body.type-category #colorbox .advancedOrder .timber-v21-availability {
+    display: none !important;
+}
+
+/* Restore normal box model inside Shoptet's Advanced Order recommendation area. */
+body.type-category .advanced-order .p-in,
+body.type-category .advanced-order .p-in-in,
+body.type-category .advanced-order .p-bottom,
+body.type-category .advanced-order .p-tools,
+body.type-category .advancedOrder .p-in,
+body.type-category .advancedOrder .p-in-in,
+body.type-category .advancedOrder .p-bottom,
+body.type-category .advancedOrder .p-tools,
+body.type-category #colorbox .p-in,
+body.type-category #colorbox .p-in-in,
+body.type-category #colorbox .p-bottom,
+body.type-category #colorbox .p-tools {
+    display: block !important;
+}
+
+/* Keep the Advanced Order recommendations compact rather than category-card sized. */
+body.type-category .advanced-order .product,
+body.type-category .advancedOrder .product,
+body.type-category #colorbox .advanced-order .product,
+body.type-category #colorbox .advancedOrder .product {
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+body.type-category .advanced-order .product .image,
+body.type-category .advancedOrder .product .image,
+body.type-category #colorbox .advanced-order .product .image,
+body.type-category #colorbox .advancedOrder .product .image {
+    width: auto !important;
+    height: auto !important;
+    max-height: 80px !important;
+}
+
+/* Do not let hover/list table effects leak into the modal. */
+body.type-category .advanced-order .product:hover,
+body.type-category .advancedOrder .product:hover,
+body.type-category #colorbox .advanced-order .product:hover,
+body.type-category #colorbox .advancedOrder .product:hover {
+    background: transparent !important;
+    transform: none !important;
+}

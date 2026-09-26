@@ -12,6 +12,7 @@ Inventář stavu k 26. 9. 2026 (homepage). Kód se převádí do repa, až když
 | `/user/documents/upload/CSS/timber-menu.js?v=1` | záhlaví, async+defer | **V1: načítá se už jen jednou** (ověřeno 26. 9.) | nepřevedeno |
 | `/user/documents/upload/CSS/timber-empty-cart.js` | zápatí | bez verze v URL | nepřevedeno |
 | `/user/documents/allscript.js?v=111` | zápatí | další vlastní JS | nepřevedeno |
+| Mřížka/řádky „GRID / LIST VIEW v19–v27“ (klientova rozpracovaná verze `timber-menu.js` ř. 579–1361 a `timber-custom.css` ř. 2071–3633, jen na jeho počítači) | **na webu není** | přepínač zobrazení, tabulkový výpis, pole pro množství, odznak počtu v košíku, řazení | **převzato beze změny** do `src/legacy/list-view/` (C3), přepisuje se na modul |
 | inline `DOMContentLoaded` → `.custom-footer__o…` (paymentBox) | zápatí | inline skript v HTML kódu | nepřevedeno |
 | inline skript `timber-page-loading` + `<style>` s `html.timber-page-loading body{visibility:hidden}` | záhlaví | **skryje celou stránku až do DOMContentLoaded (max 1,5 s)** — pravděpodobně zhoršuje LCP, kandidát na výkonovou kartu | nepřevedeno |
 | inline `<style>` — úpravy detailu, filtrů, welcome boxu, hlavičky a košíku (desktop breakpointy) | záhlaví | ~60 pravidel | nepřevedeno |
