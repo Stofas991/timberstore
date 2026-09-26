@@ -131,6 +131,7 @@ V záhlaví Shoptetu je jen tento loader (zdroj v repu: `shoptet/loader.html`). 
   var ok = c && /^(v\d+\.\d+\.\d+(-rc\.\d+)?|[0-9a-f]{7,40})$/.test(c[1]);
   var v = ok ? c[1] : PROD;
   window.TimberLoader = { version: v, preview: !!ok };
+  if (!v) return; // PROD = '' → zákazníci nenačtou nic, funguje jen preview
   // document.write: CSS blokuje vykreslení (bez probliknutí), JS je defer (neblokuje)
   document.write('<link rel="stylesheet" href="' + BASE + v + '/dist/timber.min.css">');
   document.write('<script defer src="' + BASE + v + '/dist/timber.min.js"><\/script>');
@@ -138,6 +139,7 @@ V záhlaví Shoptetu je jen tento loader (zdroj v repu: `shoptet/loader.html`). 
 </script>
 ```
 
+- `PROD = ''` vypne náš kód pro zákazníky, preview přes `?ts_preview=` funguje dál. Používá se při prvním vložení loaderu (vyzkoušet a schválit dřív, než to zákazníci uvidí) a jako nouzový vypínač.
 - Preview verze se načítá **jen z našeho repa** a jen s platným tagem nebo commit hashem (regex) — nic jiného se přes URL podstrčit nedá.
 - V preview zobrazí `core` malý štítek „PREVIEW v1.5.0-rc.1", aby si ho nikdo nespletl s produkcí.
 

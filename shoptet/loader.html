@@ -6,7 +6,7 @@
 <script>
 (function () {
   var BASE = 'https://cdn.jsdelivr.net/gh/Timberstore/timberstore@';
-  var PROD = 'v0.1.0'; // ← production version
+  var PROD = ''; // ← production version ('' = off for customers, only ?ts_preview loads)
   var q = location.search.match(/[?&]ts_preview=([\w.\-]+)/);
   if (q) document.cookie = q[1] === 'off'
     ? 'ts_preview=; max-age=0; path=/'
@@ -15,6 +15,7 @@
   var ok = c && /^(v\d+\.\d+\.\d+(-rc\.\d+)?|[0-9a-f]{7,40})$/.test(c[1]);
   var v = ok ? c[1] : PROD;
   window.TimberLoader = { version: v, preview: !!ok };
+  if (!v) return;
   // document.write: CSS blocks render (no flash), JS is defer (non-blocking)
   document.write('<link rel="stylesheet" href="' + BASE + v + '/dist/timber.min.css">');
   document.write('<script defer src="' + BASE + v + '/dist/timber.min.js"><\/script>');
