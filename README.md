@@ -22,6 +22,7 @@ Po vydání změnit `PROD` v loaderu v Shoptetu (`shoptet/loader.html`).
 ## Preview
 - Zapnout: `https://www.timberstore.sk/?ts_preview=v0.2.0-rc.0` (cookie na 7 dní, vlevo dole štítek PREVIEW)
 - Vypnout: `?ts_preview=off` nebo klik na štítek
+- Release skripty po pushi samy počkají (`npm run wait-cdn`), až jsDelivr nový tag vrací, a vypíšou preview odkaz. Když skript skončí chybou, odkaz ještě neposílat.
 - **Nový tag posílat až po ověření**, že ho jsDelivr vrací (`https://cdn.jsdelivr.net/gh/Timberstore/timberstore@<tag>/dist/timber.min.js` → 200). Hned po pushi může pár minut vracet 404 a tu si pak chvíli pamatuje. Pomůže `https://purge.jsdelivr.net/gh/Timberstore/timberstore@<tag>/dist/timber.min.js` (a totéž pro `.css`).
 
 ## Struktura
