@@ -19,7 +19,7 @@
   if (!v) return;
   // CSS via document.write: parser-inserted, so it blocks render (no flash of unstyled content)
   document.write('<link rel="stylesheet" href="' + BASE + v + '/dist/timber.min.css">');
-  // JS as a script element: never blocks rendering. (No "<script" inside a string — the Shoptet editor's linter breaks on it.)
+  // JS: created as an element, never blocks rendering. Never write a script tag as text anywhere in this block (code or comments) — the Shoptet editor's linter breaks on it.
   var s = document.createElement('script');
   s.src = BASE + v + '/dist/timber.min.js';
   document.head.appendChild(s);

@@ -135,7 +135,7 @@ V záhlaví Shoptetu je jen tento loader (zdroj v repu: `shoptet/loader.html`). 
   if (!v) return; // PROD = '' → zákazníci nenačtou nic, funguje jen preview
   // CSS přes document.write: blokuje vykreslení (bez probliknutí)
   document.write('<link rel="stylesheet" href="' + BASE + v + '/dist/timber.min.css">');
-  // JS jako element: neblokuje. Žádné "<script" uvnitř řetězce — kontrola kódu v editoru Shoptetu na tom padá.
+  // JS jako element: neblokuje. V tomto bloku nikdy nepsat script tag jako text (ani v komentáři) — kontrola kódu v editoru Shoptetu na tom padá.
   var s = document.createElement('script');
   s.src = BASE + v + '/dist/timber.min.js';
   document.head.appendChild(s);
