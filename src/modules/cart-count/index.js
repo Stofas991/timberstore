@@ -21,7 +21,10 @@ function render() {
     let badge = button.querySelector('.ts-cart-count');
 
     if (!qty) {
-      badge?.remove();
+      if (badge) {
+        badge.remove();
+        button.removeAttribute('title');
+      }
       return;
     }
     if (!badge) {
