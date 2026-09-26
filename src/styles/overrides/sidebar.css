@@ -1,0 +1,20 @@
+/* Left sidebar on listing pages (category tree + support box).
+   TB1 · on an iPad in landscape (992–1199 px) the sidebar takes 320 of 1024 px and
+   products fit only 2 per row (content 612 px). Filters are in the bar above the
+   products, so the sidebar holds only the category tree, which is also in the top
+   menu and in the subcategory tiles. At this width behave like below 992 px: no
+   sidebar, full-width content, and 3 products per row as on desktop.
+   !important: the sidebar/content widths come from the template and legacy CSS. */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .multiple-columns-body .sidebar-left {
+    display: none !important;
+  }
+
+  .multiple-columns-body .content-wrapper-in > .content {
+    padding-left: 0 !important;
+  }
+
+  .multiple-columns-body #products > .product {
+    width: 33.3333% !important;
+  }
+}

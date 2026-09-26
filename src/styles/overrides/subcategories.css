@@ -3,6 +3,14 @@
    ("Kancelárs…", "Dverové kľučky, závesy,…"). Slovak hyphenation (<html lang="sk">)
    and one more line fit every current name.
    !important: beats the !important rules in timber-custom.css (legacy). */
+/* TB1 · with the sidebar hidden on an iPad in landscape (see sidebar.css) the tiles
+   would stay 2 per row and very wide; use 4 per row as on desktop. */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .multiple-columns-body .subcategories > li {
+    width: 25% !important;
+  }
+}
+
 @media (max-width: 767px) {
   .subcategories li .text {
     hyphens: auto;
