@@ -7,7 +7,7 @@
   .ts-qty {
     display: grid;
     flex: 0 0 auto;
-    grid-template-columns: 34px minmax(42px, auto) 34px;
+    grid-template-columns: 34px 48px 34px; /* fixed: a text input's default width is ~20 characters */
     height: 38px;
     border: 1px solid var(--ts-color-qty-border);
     border-radius: 6px;
@@ -36,16 +36,27 @@
     outline-offset: -2px;
   }
 
+  /* the editable number; !important: the template styles every text input */
   .ts-qty__value {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 var(--ts-space-1);
-    border-inline: 1px solid var(--ts-color-qty-border);
-    color: var(--ts-color-qty-text);
-    font-size: 12.5px;
-    font-weight: 800;
-    white-space: nowrap;
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 var(--ts-space-1) !important;
+    border: 0 !important;
+    border-inline: 1px solid var(--ts-color-qty-border) !important;
+    border-radius: 0 !important;
+    background: var(--ts-color-bg) !important;
+    box-shadow: none !important;
+    color: var(--ts-color-qty-text) !important;
+    font-size: 12.5px !important;
+    font-weight: 800 !important;
+    text-align: center !important;
+  }
+
+  .ts-qty__value:focus {
+    outline: 2px solid var(--ts-color-accent) !important;
+    outline-offset: -2px !important;
   }
 
   /* Grid tiles: quantity and "Do košíka" side by side. Scoped with :has() to forms
