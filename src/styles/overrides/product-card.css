@@ -1,0 +1,21 @@
+/* Product tiles in listings.
+   Drobnosti (K5) · timber-custom.css sets `.products .product { height: 100% }`; in a
+   flex row with no fixed height that means "content height", so a tile with one more
+   line (unit price "0,01 € / 1 ks") ends up taller than its neighbours and the row
+   looks broken. Let tiles stretch to the row height and keep price + button at the
+   bottom so buttons line up.
+   !important: beats the !important rules in timber-custom.css (legacy). */
+.products .product,
+.products-block .product {
+  height: auto !important;
+}
+
+.products .product .p-in,
+.products-block .product .p-in {
+  flex: 1 1 auto;
+}
+
+.products .product .p-bottom,
+.products-block .product .p-bottom {
+  margin-top: auto;
+}

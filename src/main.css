@@ -5,4 +5,14 @@
 @import './modules/carousel-swipe/carousel-swipe.css';
 @import './modules/gallery-swipe/gallery-swipe.css';
 
-/* Shoptet overrides (one file per component) — none yet */
+/* Shoptet overrides (one file per component) */
+@import './styles/overrides/top-bar.css';
+@import './styles/overrides/header.css';
+@import './styles/overrides/navigation.css';
+@import './styles/overrides/carousel.css';
+@import './styles/overrides/instagram.css';
+@import './styles/overrides/sidebar.css';
+@import './styles/overrides/subcategories.css';
+@import './styles/overrides/filters.css';
+@import './styles/overrides/product-card.css';
+@import './styles/overrides/checkout.css';

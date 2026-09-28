@@ -1,0 +1,8 @@
+/* Homepage banner carousel.
+   M4 · white banner text sits directly on light photos with no backdrop — hard to read,
+   mostly on mobile. A soft shadow keeps it legible on any photo.
+   .is-black = banner set to dark text in the admin, no shadow there. */
+.extended-banner-texts:not(.is-black) .extended-banner-title,
+.extended-banner-texts:not(.is-black) .extended-banner-text {
+  text-shadow: var(--ts-shadow-text-on-photo);
+}

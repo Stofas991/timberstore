@@ -40,7 +40,8 @@ export function start(modules) {
     const page = getPageType();
     window.Timber.page = page;
     runModules(modules, page, document);
-    if (window.TimberLoader?.preview) showPreviewBadge(__VERSION__);
+    // Show what the loader actually loaded: a tag, or a commit hash when previewing a branch.
+    if (window.TimberLoader?.preview) showPreviewBadge(window.TimberLoader.version);
     log.debug('started', window.Timber);
 
     // Shoptet swaps page content via AJAX (filters, pagination) — re-run modules.

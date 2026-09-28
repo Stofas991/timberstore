@@ -1,0 +1,17 @@
+/* Listing filters (dropdowns in the bar above the products).
+   K3 · the dropdown is fixed at 240 px (200 px for the labels), so a long brand like
+   "ITALIANA FERRAMENTA 327" wraps onto two lines. Let it grow to its longest label
+   (Shoptet's max-width 360 px still applies).
+   !important: the fixed widths come from the template/legacy CSS with !important. */
+@media (min-width: 768px) {
+  #filters .filter-section form {
+    width: max-content !important;
+    min-width: 240px;
+  }
+
+  #filters .filter-section form fieldset,
+  #filters .filter-section form fieldset > div,
+  #filters .filter-section form .filter-label {
+    width: auto !important;
+  }
+}
