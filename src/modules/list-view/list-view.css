@@ -25,7 +25,7 @@
   :root {
     --ts-table-gap: 12px;
     --ts-table-pad: 14px;
-    --ts-table-cols: 58px minmax(0, 1fr) 100px 108px 108px 120px;
+    --ts-table-cols: 72px minmax(0, 1fr) 100px 108px 108px 120px;
     --ts-table-rows: auto auto;
     --ts-table-areas: 'img name avail price qty cart' 'img code avail price qty cart';
     --ts-table-head-areas: 'product product avail price qty cart';
@@ -35,7 +35,7 @@
 @media (min-width: 1440px) {
   :root {
     --ts-table-gap: 16px;
-    --ts-table-cols: 58px minmax(0, 1fr) 92px 124px 132px 120px 144px;
+    --ts-table-cols: 72px minmax(0, 1fr) 92px 124px 132px 120px 144px;
     --ts-table-rows: auto;
     --ts-table-areas: 'img name code avail price qty cart';
     --ts-table-head-areas: 'product product code avail price qty cart';
@@ -260,14 +260,16 @@
   }
 
   /* image */
+  /* image fills the row height (76 px row − 2 × 8 px padding = 60 px) */
   .ts-view-list #products .p > a.image {
     grid-area: img !important;
-    align-self: center !important;
+    align-self: stretch !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 58px !important;
-    height: 56px !important;
+    width: 72px !important;
+    height: auto !important;
+    min-height: 60px !important;
     margin: 0 !important;
     padding: 0 !important;
   }
@@ -275,8 +277,8 @@
   .ts-view-list #products .p > a.image > img {
     width: auto !important;
     height: auto !important;
-    max-width: 54px !important;
-    max-height: 52px !important;
+    max-width: 72px !important;
+    max-height: 60px !important;
     object-fit: contain !important;
     /* product photos have a white background; blend it into the (hovered) row */
     mix-blend-mode: multiply;
