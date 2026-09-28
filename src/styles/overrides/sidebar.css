@@ -14,7 +14,8 @@
     padding-left: 0 !important;
   }
 
-  .multiple-columns-body #products > .product {
+  /* grid only — in the C3 table view every row is full width */
+  html:not(.ts-view-list) .multiple-columns-body #products > .product {
     width: 33.3333% !important;
   }
 }

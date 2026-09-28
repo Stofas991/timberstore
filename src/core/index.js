@@ -1,5 +1,5 @@
 import { getPageType } from './page.js';
-import { SHOPTET_EVENTS } from './events.js';
+import { CONTENT_EVENTS } from './events.js';
 import { log } from './log.js';
 
 /* global __VERSION__ */
@@ -44,11 +44,11 @@ export function start(modules) {
     if (window.TimberLoader?.preview) showPreviewBadge(window.TimberLoader.version);
     log.debug('started', window.Timber);
 
-    // Shoptet swaps page content via AJAX (filters, pagination) — re-run modules.
-    // Modules are idempotent, so already initialised elements are skipped.
-    document.addEventListener(SHOPTET_EVENTS.pageContentLoaded, () => {
-      runModules(modules, page, document);
-    });
+    // Shoptet swaps or appends page content via AJAX (filters, pagination, load more)
+    // — re-run modules. They are idempotent, so initialised elements are skipped.
+    for (const event of CONTENT_EVENTS) {
+      document.addEventListener(event, () => runModules(modules, page, document));
+    }
   };
 
   if (document.readyState === 'loading') {

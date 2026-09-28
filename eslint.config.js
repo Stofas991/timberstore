@@ -1,6 +1,8 @@
 import globals from 'globals';
 
 export default [
+  // Imported legacy code is kept verbatim until it is rewritten (CONTRIBUTING.md 1.3).
+  { ignores: ['src/legacy/**'] },
   {
     files: ['src/**/*.js', 'shared/**/*.js'],
     languageOptions: {

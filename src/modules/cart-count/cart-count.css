@@ -1,0 +1,26 @@
+/* C3 · Badge with the quantity already in the cart, top-right on "Do košíka". */
+/* Only buttons that carry our badge (:has), so nothing changes without this module. */
+button:has(> .ts-cart-count) {
+  position: relative;
+}
+
+.ts-cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  z-index: 2;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--ts-color-bg);
+  border-radius: 999px;
+  background: var(--ts-color-in-cart);
+  color: var(--ts-color-bg);
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 15%);
+}

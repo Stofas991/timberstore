@@ -4,6 +4,9 @@
 /* Modules */
 @import './modules/carousel-swipe/carousel-swipe.css';
 @import './modules/gallery-swipe/gallery-swipe.css';
+@import './modules/list-view/list-view.css';
+@import './modules/qty-picker/qty-picker.css';
+@import './modules/cart-count/cart-count.css';
 
 /* Shoptet overrides (one file per component) */
 @import './styles/overrides/top-bar.css';
