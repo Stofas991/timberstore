@@ -4,10 +4,21 @@ export const SEL = {
   // Homepage banner carousel (Bootstrap 3 carousel rendered by Shoptet)
   carousel: '#carousel.carousel',
   carouselItem: '.item',
+  // Slide images; Shoptet already picks the mobile/desktop file server-side, slides 2+ are loading="lazy"
+  carouselImage: '.item img',
   // Product detail gallery: main image + thumbnails (verified 2026-09-26)
   productImage: '.p-image-wrapper .p-image',
   productThumbnail: '.p-thumbnails a.p-thumbnail',
   productThumbnailActiveClass: 'highlighted',
+  // Thumbnail strip: .p-thumbnails (overflow hidden) > .p-thumbnails-inner (absolute, moved by
+  // style.left/top with a 0.3 s transition). Arrows move it by one thumbnail and carry the
+  // busy class while it slides (verified 2026-09-29).
+  productThumbnails: '.p-thumbnails',
+  productThumbnailsInner: '.p-thumbnails-inner',
+  productThumbnailsNext: '.p-thumbnails-arrows .thumbnail-next',
+  productThumbnailsPrev: '.p-thumbnails-arrows .thumbnail-prev',
+  productThumbnailsVerticalClass: 'p-thumbnails-vertical',
+  productThumbnailsBusyClass: 'clicked',
   // Transparent layer cloud-zoom puts over the main image (rebuilt ~201 ms after every photo switch)
   productZoomTrap: '.mousetrap',
 

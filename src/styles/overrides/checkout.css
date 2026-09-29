@@ -1,8 +1,13 @@
 /* Checkout (cart steps).
    Drobnosti · the "Späť" button under "Pokračovať" is styled as a second button and
    pulls attention away from continuing. Turn it into a quiet text link.
+   Client feedback: on hover Apollo still turned the arrow (::before) white and the
+   pill orange (`.cart-content .next-step-back:hover`), so the arrow vanished/jumped.
+   Hover is now part of the link style, arrow included.
+   Popups (.colorbox-close) keep their own button look.
    !important: the pill look comes from !important rules in the legacy CSS. */
-.ordering-process .next-step a.next-step-back {
+/* Specificity (0,3,1) already beats Apollo's `.cart-content .next-step-back:hover`. */
+.ordering-process a.next-step-back:not(.colorbox-close) {
   background: none !important;
   border: 0 !important;
   box-shadow: none !important;
@@ -10,4 +15,19 @@
   font-size: 14px !important;
   font-weight: 400 !important;
   text-decoration: underline;
+}
+
+.ordering-process a.next-step-back:not(.colorbox-close):hover {
+  color: var(--ts-color-text) !important;
+}
+
+.ordering-process a.next-step-back:not(.colorbox-close)::before,
+.ordering-process a.next-step-back:not(.colorbox-close):hover::before {
+  display: inline-block;
+  margin-right: var(--ts-space-2) !important;
+  color: inherit !important;
+  font-size: 11px !important;
+  text-decoration: none;
+  transform: none !important;
+  transition: none !important;
 }

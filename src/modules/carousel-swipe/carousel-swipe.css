@@ -7,3 +7,12 @@
   -webkit-user-drag: none;
   user-select: none;
 }
+
+/* M1 · Faster slide under a finger (Bootstrap default 0.6 s). Keep in sync with
+   TOUCH_TRANSITION_MS in index.js, which sets Bootstrap's matching timer.
+   !important: Bootstrap/Apollo set the item transition on .carousel-inner > .item. */
+@media (hover: none) and (pointer: coarse) {
+  .ts-carousel-swipe .item {
+    transition-duration: 350ms !important;
+  }
+}
