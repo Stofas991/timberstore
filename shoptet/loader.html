@@ -7,7 +7,7 @@
 (function () {
   /* jshint evil: true */ // document.write below is intentional (render-blocking CSS)
   var BASE = 'https://cdn.jsdelivr.net/gh/Timberstore/timberstore@';
-  var PROD = ''; // ← production version ('' = off for customers, only ?ts_preview loads)
+  var PROD = 'v0.3.0'; // ← production version ('' = off for customers, only ?ts_preview loads)
   var q = location.search.match(/[?&]ts_preview=([\w.\-]+)/);
   if (q) {
     document.cookie = q[1] === 'off' ? 'ts_preview=; max-age=0; path=/' : 'ts_preview=' + q[1] + '; max-age=604800; path=/';
