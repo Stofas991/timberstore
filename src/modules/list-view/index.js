@@ -51,7 +51,9 @@ function switchView(view) {
   root.classList.add(SWITCHING_CLASS);
   setView(view);
   root.getBoundingClientRect(); // apply the new styles now, while transitions are off
-  requestAnimationFrame(() => requestAnimationFrame(() => root.classList.remove(SWITCHING_CLASS)));
+  // The values are final already, so turning transitions back on animates nothing.
+  // A timer (not requestAnimationFrame) also runs in background tabs.
+  setTimeout(() => root.classList.remove(SWITCHING_CLASS), 50);
 }
 
 // Before first paint: the class must be there before the listing is rendered.
