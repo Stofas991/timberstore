@@ -4,10 +4,12 @@ button:has(> .ts-cart-count) {
   position: relative;
 }
 
+/* right: 0, not outside the button: the tile (.p) has overflow: hidden and next to the
+   quantity field the button reaches the tile's edge, so anything further right is cut off. */
 .ts-cart-count {
   position: absolute;
-  top: -8px;
-  right: -8px;
+  top: -9px;
+  right: 0;
   z-index: 2;
   min-width: 22px;
   height: 22px;
