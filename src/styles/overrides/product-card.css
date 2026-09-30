@@ -4,18 +4,20 @@
    line (unit price "0,01 € / 1 ks") ends up taller than its neighbours and the row
    looks broken. Let tiles stretch to the row height and keep price + button at the
    bottom so buttons line up.
+
+   Listing only: the "Ostatní zákazníci tiež nakúpili" block in the add-to-cart popup
+   is also `#products.products-block` (+ .products-related) and its layout depends on
+   the template's heights — with height: auto the price and button moved off-screen
+   on mobile (hotfix v0.3.1).
    !important: beats the !important rules in timber-custom.css (legacy). */
-.products .product,
-.products-block .product {
+#products:not(.products-related) > .product {
   height: auto !important;
 }
 
-.products .product .p-in,
-.products-block .product .p-in {
+#products:not(.products-related) > .product .p-in {
   flex: 1 1 auto;
 }
 
-.products .product .p-bottom,
-.products-block .product .p-bottom {
+#products:not(.products-related) > .product .p-bottom {
   margin-top: auto;
 }

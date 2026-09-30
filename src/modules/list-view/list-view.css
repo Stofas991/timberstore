@@ -174,7 +174,7 @@
 
 @media (min-width: 992px) {
   /* ---------- table body ---------- */
-  .ts-view-list #products {
+  .ts-view-list #products:not(.products-related) {
     display: block !important;
     margin: 0 0 24px !important;
     padding: 0 !important;
@@ -185,8 +185,8 @@
     overflow: hidden !important;
   }
 
-  .ts-view-list #products::before,
-  .ts-view-list #products::after {
+  .ts-view-list #products:not(.products-related)::before,
+  .ts-view-list #products:not(.products-related)::after {
     display: none !important;
   }
 
@@ -194,14 +194,14 @@
      make every name shrink and slide. The table has no transitions at all; the
      grid gets them back once the switch is done (ts-view-switching, set by JS for
      50 ms, covers the way back to the grid). */
-  .ts-view-list #products *,
+  .ts-view-list #products:not(.products-related) *,
   .ts-view-list .ts-product-table-head *,
-  .ts-view-switching #products,
-  .ts-view-switching #products * {
+  .ts-view-switching #products:not(.products-related),
+  .ts-view-switching #products:not(.products-related) * {
     transition: none !important;
   }
 
-  .ts-view-list #products > .product {
+  .ts-view-list #products:not(.products-related) > .product {
     display: block !important;
     width: 100% !important;
     max-width: none !important;
@@ -217,16 +217,16 @@
     transform: none !important;
   }
 
-  .ts-view-list #products > .product:last-child {
+  .ts-view-list #products:not(.products-related) > .product:last-child {
     border-bottom: 0 !important;
   }
 
-  .ts-view-list #products > .product:hover,
-  .ts-view-list #products > .product:focus-within {
+  .ts-view-list #products:not(.products-related) > .product:hover,
+  .ts-view-list #products:not(.products-related) > .product:focus-within {
     background: var(--ts-color-table-row-hover) !important;
   }
 
-  .ts-view-list #products > .product > .p {
+  .ts-view-list #products:not(.products-related) > .product > .p {
     display: grid !important;
     grid-template-columns: var(--ts-table-cols) !important;
     grid-template-rows: var(--ts-table-rows) !important;
@@ -246,26 +246,26 @@
   }
 
   /* Flatten Shoptet's wrappers so their contents become grid items. */
-  .ts-view-list #products > .product > .p > .p-in,
-  .ts-view-list #products .p-in-in,
-  .ts-view-list #products .p-bottom,
-  .ts-view-list #products .p-bottom > [data-micro='offer'],
-  .ts-view-list #products .p-tools,
-  .ts-view-list #products .product-btn,
-  .ts-view-list #products .product-btn > form.pr-action {
+  .ts-view-list #products:not(.products-related) > .product > .p > .p-in,
+  .ts-view-list #products:not(.products-related) .p-in-in,
+  .ts-view-list #products:not(.products-related) .p-bottom,
+  .ts-view-list #products:not(.products-related) .p-bottom > [data-micro='offer'],
+  .ts-view-list #products:not(.products-related) .p-tools,
+  .ts-view-list #products:not(.products-related) .product-btn,
+  .ts-view-list #products:not(.products-related) .product-btn > form.pr-action {
     display: contents !important;
   }
 
   /* Not part of the table. */
-  .ts-view-list #products .ratings-wrapper,
-  .ts-view-list #products .flags,
-  .ts-view-list #products .p-desc {
+  .ts-view-list #products:not(.products-related) .ratings-wrapper,
+  .ts-view-list #products:not(.products-related) .flags,
+  .ts-view-list #products:not(.products-related) .p-desc {
     display: none !important;
   }
 
   /* image */
   /* image fills the row height (76 px row − 2 × 8 px padding = 60 px; photos are 4:3 → 80 × 60) */
-  .ts-view-list #products .p > a.image {
+  .ts-view-list #products:not(.products-related) .p > a.image {
     grid-area: img !important;
     align-self: stretch !important;
     display: flex !important;
@@ -278,7 +278,7 @@
     padding: 0 !important;
   }
 
-  .ts-view-list #products .p > a.image > img {
+  .ts-view-list #products:not(.products-related) .p > a.image > img {
     width: auto !important;
     height: auto !important;
     max-width: 80px !important;
@@ -290,7 +290,7 @@
   }
 
   /* name — 2 lines max */
-  .ts-view-list #products a.name {
+  .ts-view-list #products:not(.products-related) a.name {
     grid-area: name !important;
     align-self: center !important;
     display: -webkit-box !important;
@@ -309,14 +309,14 @@
     text-align: left !important;
   }
 
-  .ts-view-list #products a.name span {
+  .ts-view-list #products:not(.products-related) a.name span {
     font: inherit !important;
     -webkit-line-clamp: unset !important;
   }
 
   /* code — Shoptet renders "Kód: 385622"; the column header already says Kód, so the
      label text is hidden (font-size 0) and only the number is shown. */
-  .ts-view-list #products .p > .p-code {
+  .ts-view-list #products:not(.products-related) .p > .p-code {
     grid-area: code !important;
     align-self: center !important;
     position: static !important;
@@ -330,13 +330,13 @@
     white-space: nowrap !important;
   }
 
-  .ts-view-list #products .p > .p-code [data-micro='sku'] {
+  .ts-view-list #products:not(.products-related) .p > .p-code [data-micro='sku'] {
     font-size: 10.5px !important;
     font-weight: 700 !important;
   }
 
   /* availability (native element, keeps the colour set in the Shoptet admin) */
-  .ts-view-list #products .availability {
+  .ts-view-list #products:not(.products-related) .availability {
     grid-area: avail !important;
     position: static !important;
     margin: 0 !important;
@@ -348,12 +348,12 @@
     transform: none !important;
   }
 
-  .ts-view-list #products .availability * {
+  .ts-view-list #products:not(.products-related) .availability * {
     font: inherit !important;
   }
 
   /* price */
-  .ts-view-list #products .prices {
+  .ts-view-list #products:not(.products-related) .prices {
     grid-area: price !important;
     display: flex !important;
     flex-direction: column !important;
@@ -364,12 +364,12 @@
     text-align: left !important;
   }
 
-  .ts-view-list #products .prices .price-final {
+  .ts-view-list #products:not(.products-related) .prices .price-final {
     order: -1 !important; /* price first, "bez DPH" and unit price under it */
   }
 
-  .ts-view-list #products .prices .price-final,
-  .ts-view-list #products .prices .price-final strong {
+  .ts-view-list #products:not(.products-related) .prices .price-final,
+  .ts-view-list #products:not(.products-related) .prices .price-final strong {
     margin: 0 !important;
     font-size: 14.5px !important;
     font-weight: 800 !important;
@@ -377,9 +377,9 @@
     white-space: nowrap !important;
   }
 
-  .ts-view-list #products .prices .price-additional,
-  .ts-view-list #products .prices .price-measure,
-  .ts-view-list #products .prices .pr-list-unit {
+  .ts-view-list #products:not(.products-related) .prices .price-additional,
+  .ts-view-list #products:not(.products-related) .prices .price-measure,
+  .ts-view-list #products:not(.products-related) .prices .pr-list-unit {
     margin: 0 !important;
     font-size: 10px !important;
     line-height: 1.15 !important;
@@ -387,14 +387,14 @@
   }
 
   /* quantity (qty-picker module) */
-  .ts-view-list #products .ts-qty {
+  .ts-view-list #products:not(.products-related) .ts-qty {
     grid-area: qty !important;
     grid-template-columns: 30px minmax(0, 1fr) 30px !important;
     width: 100% !important;
   }
 
   /* cart button, or "Detail" for products with variants */
-  .ts-view-list #products .product-btn .btn {
+  .ts-view-list #products:not(.products-related) .product-btn .btn {
     grid-area: cart !important;
     width: 100% !important;
     min-width: 0 !important;
@@ -413,11 +413,11 @@
    bottom of the first line, code right under it. Last in the file so it wins over
    the centred defaults above. */
 @media (min-width: 992px) and (max-width: 1439px) {
-  .ts-view-list #products a.name {
+  .ts-view-list #products:not(.products-related) a.name {
     align-self: end !important;
   }
 
-  .ts-view-list #products .p > .p-code {
+  .ts-view-list #products:not(.products-related) .p > .p-code {
     align-self: start !important;
   }
 }
