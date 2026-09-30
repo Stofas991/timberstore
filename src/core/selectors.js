@@ -24,8 +24,10 @@ export const SEL = {
 
   // Product listing (category, search). Final DOM after Apollo has moved the
   // availability into .p-tools and the cart form into .product-btn (verified 2026-09-26).
-  productList: '#products',
-  productCard: '#products > .product',
+  // The add-to-cart popup's "Ostatní zákazníci tiež nakúpili" block is also
+  // #products.products-block; .products-related tells it apart from the listing.
+  productList: '#products:not(.products-related)',
+  productCard: '#products:not(.products-related) > .product',
   cartForm: 'form.pr-action',
   cartFormAmount: 'input[name="amount"]', // hidden; the multiply_order add-on writes the pack size here
   cartFormPriceId: 'input[name="priceId"]',
