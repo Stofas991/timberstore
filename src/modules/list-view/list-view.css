@@ -191,9 +191,13 @@
   }
 
   /* The template animates card properties (transition 0.3s); switching views would
-     make every name shrink and slide. The table switches instantly. */
+     make every name shrink and slide. The table has no transitions at all; the
+     grid gets them back once the switch is done (ts-view-switching, set by JS for
+     50 ms, covers the way back to the grid). */
   .ts-view-list #products *,
-  .ts-view-list .ts-product-table-head * {
+  .ts-view-list .ts-product-table-head *,
+  .ts-view-switching #products,
+  .ts-view-switching #products * {
     transition: none !important;
   }
 

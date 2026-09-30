@@ -15,6 +15,7 @@ import { TEXTS } from '../../core/texts.js';
 
 const STORAGE_KEY = 'ts-product-view';
 const LIST_CLASS = 'ts-view-list';
+const SWITCHING_CLASS = 'ts-view-switching';
 
 const ICONS = {
   grid: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>',
@@ -39,6 +40,20 @@ function saveView(view) {
 
 function setView(view) {
   document.documentElement.classList.toggle(LIST_CLASS, view === 'list');
+}
+
+// Switch without the template's 0.3 s card transitions (names would visibly grow
+// or shrink between 13.5 and 18 px). Transitions are off only for the moment of
+// the switch: the new styles are applied (forced layout), then they come back
+// for the grid's hover effects.
+function switchView(view) {
+  const root = document.documentElement;
+  root.classList.add(SWITCHING_CLASS);
+  setView(view);
+  root.getBoundingClientRect(); // apply the new styles now, while transitions are off
+  // The values are final already, so turning transitions back on animates nothing.
+  // A timer (not requestAnimationFrame) also runs in background tabs.
+  setTimeout(() => root.classList.remove(SWITCHING_CLASS), 50);
 }
 
 // Before first paint: the class must be there before the listing is rendered.
@@ -87,7 +102,7 @@ function buildSwitch() {
     const btn = e.target.closest('[data-ts-view]');
     if (!btn) return;
     saveView(btn.dataset.tsView);
-    setView(btn.dataset.tsView);
+    switchView(btn.dataset.tsView);
     refresh();
   });
   return box;

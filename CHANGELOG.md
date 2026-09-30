@@ -2,6 +2,9 @@
 
 Formát: verze · datum · karty · co se změnilo · PageSpeed mobil před/po.
 
+## v0.3.1 · nevydáno
+- **C3** · Přepnutí Mriežka ↔ Riadky bez animace: po návratu na mřížku se názvy produktů „zvětšovaly“ z 13,5 na 18 px (přechody šablony 0,3 s). Přechody jsou vypnuté jen na okamžik přepnutí, hover efekty dlaždic v mřížce zůstávají.
+
 ## v0.3.0 · 2026-09-29 · první nasazení
 Obsahuje i v0.1.0 a v0.2.0 (nikdy nenasazené, jen tagy / rc).
 
