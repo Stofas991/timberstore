@@ -1,10 +1,70 @@
 /* Homepage Instagram block.
-   Drobnosti · on mobile 4 photos in 3 columns leave the 4th alone on a grey strip.
-   Use a 2 × 2 grid there. max-width: only the mobile layout is wrong, desktop keeps
-   Shoptet's 4 columns. */
+   Drobnosti · Shoptet stretches the posts across the whole window (≈360 px tiles
+   on a 1440 px screen). Make it a compact single-row strip like remab.sk:
+   desktop = all posts in one centred row, tiles max 160 px (shrink to fit);
+   mobile = one row scrolled with a finger, ~4 tiles visible.
+   Independent of the post count set in admin (4 or 8), no columns-N selectors. */
+
+.instagram-block {
+  margin-top: var(--ts-space-section);
+  /* Room for the follow button: gap + Shoptet's button height + space below. */
+  padding-bottom: calc(var(--ts-space-3) + 50px + var(--ts-space-section));
+}
+
+.instagram-block .instagram-widget {
+  /* static: the follow button is absolutely positioned inside the widget; anchor
+     it to .instagram-block instead, so the mobile scroller doesn't clip it. */
+  position: static;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: var(--ts-space-2);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--ts-space-3);
+  background: none;
+}
+
+/* Shoptet's full-width shadow under the tiles. */
+.instagram-block .instagram-widget::after {
+  display: none;
+}
+
+.instagram-block .instagram-widget .instagram-widget-item {
+  flex: 0 1 160px;
+  width: auto;
+  min-width: 0;
+}
+
+.instagram-block .instagram-follow-btn {
+  top: auto;
+  bottom: var(--ts-space-section);
+  left: 0;
+  margin-top: 0;
+}
+
 @media (max-width: 767px) {
-  .instagram-widget.columns-4 .instagram-widget-item {
-    flex-basis: 50%;
-    width: 50%;
+  .instagram-block {
+    /* Shoptet's button is 40 px tall on mobile. */
+    padding-bottom: calc(var(--ts-space-3) + 40px + var(--ts-space-section));
+  }
+
+  .instagram-block .instagram-widget {
+    justify-content: flex-start;
+    gap: 6px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--ts-space-3);
+    scrollbar-width: none;
+  }
+
+  .instagram-block .instagram-widget::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 4.4 tiles visible, the cut one hints the strip scrolls. With ≤ 4 posts
+     there's nothing to scroll and flex-grow fills the row instead. */
+  .instagram-block .instagram-widget .instagram-widget-item {
+    flex: 1 0 calc((100% - 4 * 6px) / 4.4);
+    scroll-snap-align: start;
   }
 }
