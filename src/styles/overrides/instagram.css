@@ -1,14 +1,14 @@
 /* Homepage Instagram block.
    Drobnosti · Shoptet stretches the posts across the whole window (≈360 px tiles
    on a 1440 px screen). Make it a compact single-row strip like remab.sk:
-   desktop = all posts in one centred row, tiles max 160 px (shrink to fit);
-   mobile = one row scrolled with a finger, ~4 tiles visible.
-   Independent of the post count set in admin (4 or 8), no columns-N selectors. */
+   desktop (≥ 992 px) = all posts in one row as wide as the page content,
+   tiles max 160 px; mobile + tablet = one row scrolled with a finger.
+   Independent of the post count set in admin (Apollo shows max 9). */
 
 .instagram-block {
   margin-top: var(--ts-space-section);
-  /* Room for the follow button: gap + Shoptet's button height + space below. */
-  padding-bottom: calc(var(--ts-space-3) + 50px + var(--ts-space-section));
+  /* Room for the follow button: gap + Shoptet's button height (40 px) + space below. */
+  padding-bottom: calc(var(--ts-space-3) + 40px + var(--ts-space-section));
 }
 
 .instagram-block .instagram-widget {
@@ -16,23 +16,16 @@
      it to .instagram-block instead, so the mobile scroller doesn't clip it. */
   position: static;
   flex-wrap: nowrap;
-  justify-content: center;
   gap: var(--ts-space-2);
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--ts-space-3);
+  /* Same side padding as Shoptet's .container, so the strip lines up with the page. */
+  padding: 0 20px;
   background: none;
 }
 
 /* Shoptet's full-width shadow under the tiles. */
 .instagram-block .instagram-widget::after {
   display: none;
-}
-
-.instagram-block .instagram-widget .instagram-widget-item {
-  flex: 0 1 160px;
-  width: auto;
-  min-width: 0;
 }
 
 .instagram-block .instagram-follow-btn {
@@ -42,18 +35,16 @@
   margin-top: 0;
 }
 
-@media (max-width: 767px) {
-  .instagram-block {
-    /* Shoptet's button is 40 px tall on mobile. */
-    padding-bottom: calc(var(--ts-space-3) + 40px + var(--ts-space-section));
-  }
-
+/* Mobile + tablet: ~3.8 tiles visible on a phone (max 140 px on a tablet), the
+   cut one hints the strip scrolls. With few posts there's nothing to scroll and
+   flex-grow fills the row instead. */
+@media (max-width: 991px) {
   .instagram-block .instagram-widget {
     justify-content: flex-start;
     gap: 6px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scroll-padding-inline: var(--ts-space-3);
+    scroll-padding-inline: 20px;
     scrollbar-width: none;
   }
 
@@ -61,10 +52,42 @@
     display: none;
   }
 
-  /* 4.4 tiles visible, the cut one hints the strip scrolls. With ≤ 4 posts
-     there's nothing to scroll and flex-grow fills the row instead. */
   .instagram-block .instagram-widget .instagram-widget-item {
-    flex: 1 0 calc((100% - 4 * 6px) / 4.4);
+    flex: 1 0 min(calc((100% - 3 * 6px) / 3.8), 140px);
+    width: auto;
+    min-width: 0;
     scroll-snap-align: start;
+  }
+}
+
+@media (min-width: 768px) {
+  .instagram-block {
+    padding-bottom: calc(var(--ts-space-3) + 50px + var(--ts-space-section)); /* button 50 px */
+  }
+}
+
+/* Desktop: one centred row, widths copied from Shoptet's .container breakpoints. */
+@media (min-width: 992px) {
+  .instagram-block .instagram-widget {
+    justify-content: center;
+    width: 972px;
+  }
+
+  .instagram-block .instagram-widget .instagram-widget-item {
+    flex: 0 1 160px;
+    width: auto;
+    min-width: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .instagram-block .instagram-widget {
+    width: 1178px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .instagram-block .instagram-widget {
+    width: 1418px;
   }
 }
