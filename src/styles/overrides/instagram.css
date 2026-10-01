@@ -35,13 +35,13 @@
   margin-top: 0;
 }
 
-/* Mobile + tablet: ~3.8 tiles visible on a phone (max 140 px on a tablet), the
-   cut one hints the strip scrolls. With few posts there's nothing to scroll and
-   flex-grow fills the row instead. */
+/* Mobile + tablet: ~2.4 tiles visible on a phone (≈135 px, post texts stay
+   readable; max 180 px on a tablet), the cut one hints the strip scrolls.
+   With few posts there's nothing to scroll and flex-grow fills the row instead. */
 @media (max-width: 991px) {
   .instagram-block .instagram-widget {
     justify-content: flex-start;
-    gap: 6px;
+    gap: var(--ts-space-2);
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-padding-inline: 20px;
@@ -53,7 +53,7 @@
   }
 
   .instagram-block .instagram-widget .instagram-widget-item {
-    flex: 1 0 min(calc((100% - 3 * 6px) / 3.8), 140px);
+    flex: 1 0 min(calc((100% - 2 * var(--ts-space-2)) / 2.4), 180px);
     width: auto;
     min-width: 0;
     scroll-snap-align: start;
