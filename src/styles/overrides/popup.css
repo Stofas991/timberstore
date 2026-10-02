@@ -8,6 +8,13 @@
    top, the close button (in #cboxContent) stays visible.
    !important: beats colorbox's inline top/height. 32px = Shoptet's margin above
    #cboxContent, 2px = padding of #cboxLoadedContent. */
+/* Page behind the popup does not scroll while it is open. Colorbox removes the content
+   when the popup closes, so the lock goes away by itself. The template already sets
+   `scrollbar-gutter: stable` on html, so hiding the scrollbar does not shift the page. */
+html:has(#colorbox .advanced-order) {
+  overflow: hidden !important;
+}
+
 /* top + bottom + fit-content + auto margins = vertically centred, at most screen high. */
 #colorbox:has(.advanced-order) {
   position: fixed !important;
