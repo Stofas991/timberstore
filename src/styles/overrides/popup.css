@@ -1,11 +1,43 @@
 /* "Produkt bol pridaný do košíka" popup (Shoptet colorbox).
-   Oprava · on phones the page could not be scrolled past the popup. Shoptet opens it
-   without maxHeight, so the popup is always as tall as its content and the page
-   scrolls, not the popup. Colorbox still sets `overflow: auto` (inline) on
-   #cboxLoadedContent and rounds its height down (941 px for 941.1 px of content), so
-   it becomes a scroll box with 1 px to scroll. A swipe that starts on the popup goes
-   to that box (iOS bounces it) instead of the page.
-   !important: beats colorbox's inline style. */
-#cboxLoadedContent:has(> .colorbox-html-content > .advanced-order) {
-  overflow: visible !important;
+   Oprava · on phones the popup (with "Ostatní zákazníci tiež nakúpili") is taller than
+   the screen. Shoptet places it once at the current scroll position and lets the page
+   scroll underneath, so a swipe often moved the dimmed page instead of the popup, or
+   got stuck: colorbox rounds #cboxLoadedContent's height down (941 px for 941.1 px)
+   and keeps `overflow: auto`, a 1 px scroll box that takes the swipe.
+   Now the popup is pinned to the screen and scrolls inside; the green header stays on
+   top, the close button (in #cboxContent) stays visible.
+   !important: beats colorbox's inline top/height. 32px = Shoptet's margin above
+   #cboxContent, 2px = padding of #cboxLoadedContent. */
+/* top + bottom + fit-content + auto margins = vertically centred, at most screen high. */
+#colorbox:has(.advanced-order) {
+  position: fixed !important;
+  top: var(--ts-space-3) !important;
+  bottom: var(--ts-space-3);
+  height: fit-content !important;
+  margin: auto 0;
+}
+
+/* The wrapper is absolute inside #colorbox; in flow (flow-root for colorbox's floats)
+   it gives #colorbox its height. */
+#colorbox:has(.advanced-order) #cboxWrapper {
+  position: relative !important;
+  display: flow-root;
+}
+
+#colorbox:has(.advanced-order) :is(#cboxWrapper, #cboxContent, #cboxMiddleLeft, #cboxMiddleRight) {
+  height: auto !important;
+}
+
+#colorbox #cboxLoadedContent:has(> .colorbox-html-content > .advanced-order) {
+  height: auto !important;
+  max-height: calc(100vh - 2 * var(--ts-space-3) - 32px - 2px);
+  max-height: calc(100dvh - 2 * var(--ts-space-3) - 32px - 2px);
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+}
+
+#colorbox .advanced-order > .h1:first-child {
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
