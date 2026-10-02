@@ -15,6 +15,12 @@ html:has(#colorbox .advanced-order) {
   overflow: hidden !important;
 }
 
+/* "Back to top" arrow (z-index 99999999) sits over the popup and would scroll the
+   locked page behind it. Hidden while the popup is open, back when it closes. */
+html:has(#colorbox .advanced-order) #back-to-top {
+  display: none !important;
+}
+
 /* top + bottom + fit-content + auto margins = vertically centred, at most screen high. */
 #colorbox:has(.advanced-order) {
   position: fixed !important;

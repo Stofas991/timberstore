@@ -3,7 +3,7 @@
 Formát: verze · datum · karty · co se změnilo · PageSpeed mobil před/po.
 
 ## Nevydáno
-- **Oprava (Shoptet)** · Okno „Produkt bol pridaný do košíka“ se vejde na obrazovku a posouvá se uvnitř (zelená hlavička s křížkem zůstává nahoře), krátké okno je vycentrované. Stránka pod otevřeným oknem se neposouvá. Dřív ho Shoptet usadil na pevné místo ve stránce a pod ním se posouvala ztmavená stránka – na telefonu se tah prstem často sekl (colorbox navíc zaokrouhlí výšku obsahu dolů a okno bylo posuvné o 1 px). Platí na mobilu i desktopu. Chyba byla i bez našeho kódu, mimo blok V1/drobnosti/M1/C3.
+- **Oprava (Shoptet)** · Okno „Produkt bol pridaný do košíka“ se vejde na obrazovku a posouvá se uvnitř (zelená hlavička s křížkem zůstává nahoře), krátké okno je vycentrované. Stránka pod otevřeným oknem se neposouvá a šipka „nahoru“ je po dobu otevření okna skrytá. Dřív ho Shoptet usadil na pevné místo ve stránce a pod ním se posouvala ztmavená stránka – na telefonu se tah prstem často sekl (colorbox navíc zaokrouhlí výšku obsahu dolů a okno bylo posuvné o 1 px). Platí na mobilu i desktopu. Chyba byla i bez našeho kódu, mimo blok V1/drobnosti/M1/C3.
 
 ## v0.3.1 · 2026-09-30 · oprava
 - **Oprava (v0.3.0)** · Okno „Produkt bol pridaný do košíka“ – blok „Ostatní zákazníci tiež nakúpili“: na mobilu ceny a tlačítka odjely mimo obrazovku (o 452 px). Blok má stejné `#products.products-block` jako výpis, takže na něj působila úprava výšky dlaždic (K5). Všechny úpravy výpisu (dlaždice, tabulka, TB1, pole pro množství, odznak košíku) jsou teď jen pro skutečný výpis (`#products:not(.products-related)`). Okno je zase jako bez našeho kódu – původní rozpad dlaždic v něm řeší karta M3.
