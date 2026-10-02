@@ -1,0 +1,11 @@
+/* "Produkt bol pridaný do košíka" popup (Shoptet colorbox).
+   Oprava · on phones the page could not be scrolled past the popup. Shoptet opens it
+   without maxHeight, so the popup is always as tall as its content and the page
+   scrolls, not the popup. Colorbox still sets `overflow: auto` (inline) on
+   #cboxLoadedContent and rounds its height down (941 px for 941.1 px of content), so
+   it becomes a scroll box with 1 px to scroll. A swipe that starts on the popup goes
+   to that box (iOS bounces it) instead of the page.
+   !important: beats colorbox's inline style. */
+#cboxLoadedContent:has(> .colorbox-html-content > .advanced-order) {
+  overflow: visible !important;
+}
