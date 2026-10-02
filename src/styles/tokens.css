@@ -25,6 +25,7 @@
   --ts-space-1: 4px;
   --ts-space-2: 8px;
   --ts-space-3: 16px;
+  --ts-z-popup-header: 10; /* above the popup content (max 4 in Shoptet: shipping box 2, slider arrows 4) */
   --ts-z-preview: 99999;
 }
 
