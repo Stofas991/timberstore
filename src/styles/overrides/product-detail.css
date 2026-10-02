@@ -1,0 +1,12 @@
+/* Product detail.
+   C3 · Product code and brand under the title are 10 px grey uppercase in the
+   template — the client finds them hard to read. !important: the template sets them
+   with higher specificity. */
+.type-detail .p-detail-info .p-code,
+.type-detail .p-detail-info .p-code *,
+.type-detail .p-detail-info a[data-testid='productCardBrandName'],
+.type-detail .p-detail-info a[data-testid='productCardBrandName'] * {
+  color: var(--ts-color-detail-code) !important;
+  font-size: 12.5px !important;
+  line-height: 1.5 !important;
+}

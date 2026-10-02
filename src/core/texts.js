@@ -8,7 +8,6 @@ export const TEXTS = {
   },
   productTable: {
     product: 'Produkt',
-    code: 'Kód',
     availability: 'Dostupnosť',
     price: 'Cena',
     amount: 'Množstvo',

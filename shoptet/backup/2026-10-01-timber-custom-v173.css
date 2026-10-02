@@ -1,0 +1,2069 @@
+/* ============================= */
+/* TIMBER STORE - CUSTOM CSS */
+/* ============================= */
+
+
+/* ============================= */
+/* HOMEPAGE - CATEGORY GRID */
+/* ============================= */
+
+.timber-categories-banner {
+  margin: 60px 0;
+}
+
+.timber-categories-banner__title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.timber-categories-banner__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.timber-categories-banner__item {
+  display: flex;
+  align-items: center;
+  padding: 14px 18px;
+  background: #ffffff;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+}
+
+.timber-categories-banner__item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+}
+
+.timber-categories-banner__item img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-right: 18px;
+}
+
+.timber-categories-banner__item span {
+  font-weight: 600;
+  color: #423e3e;
+}
+
+
+/* ============================= */
+/* MOBILE CATEGORY GRID */
+/* ============================= */
+
+@media (max-width: 768px) {
+  .timber-categories-banner {
+    margin: 40px 0;
+  }
+
+  .timber-categories-banner__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .timber-categories-banner__item {
+    flex-direction: column;
+    text-align: center;
+    padding: 16px;
+  }
+
+  .timber-categories-banner__item img {
+    margin: 0 0 10px 0;
+    width: 90px;
+    height: 90px;
+  }
+}
+
+
+/* ============================= */
+/* HIDE NEWSLETTER EVERYWHERE */
+/* ============================= */
+
+.custom-footer__newsletter,
+.footer-item-newsletter,
+.newsletter,
+.newsletter-wrapper,
+.footer-newsletter,
+.homepage-newsletter,
+.subscribe-form,
+div[class*="newsletter"],
+section[class*="newsletter"],
+form[action*="newsletter"],
+form[action*="subscribe"],
+form[action*="Subscribe"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+/* ============================= */
+/* HOMEPAGE FOOTER SPACING */
+/* ============================= */
+
+.in-index .homepage-box {
+  margin-bottom: 0 !important;
+}
+
+.in-index .welcome,
+.in-index .welcome-wrapper,
+.in-index .homepage-box.welcome-wrapper {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.in-index #footer {
+  margin-top: -15px !important;
+  padding-top: 0 !important;
+}
+
+.in-index .footer-rows {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.in-index .overall-wrapper {
+  padding-bottom: 0 !important;
+}
+
+
+/* ============================= */
+/* FAQ HOMEPAGE */
+/* ============================= */
+
+.in-index .faq-block {
+  margin-top: 38px !important;
+  margin-bottom: 45px !important;
+}
+
+.in-index .faq-block .homepage-group-title {
+  text-align: center !important;
+  font-weight: 800 !important;
+  color: #423e3e !important;
+  margin-bottom: 24px !important;
+  font-size: 28px !important;
+}
+
+.in-index .faq-block .faq-group {
+  display: flex !important;
+  gap: 28px !important;
+  align-items: flex-start !important;
+}
+
+.in-index .faq-block .faq-side {
+  width: 200px !important;
+  flex-shrink: 0 !important;
+  padding-top: 18px !important;
+}
+
+.in-index .faq-block .faq-side-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.in-index .faq-block .faq-side-list__item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  font-weight: 700 !important;
+  color: #000000 !important;
+  padding: 10px 16px !important;
+  margin-bottom: 8px !important;
+  border-radius: 999px !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  line-height: 1.2 !important;
+  transition: .22s ease !important;
+}
+
+.in-index .faq-block .faq-side-list__item:hover {
+  color: #C97A2B !important;
+  background: var(--color-tertiary, #FAF3EB) !important;
+}
+
+.in-index .faq-block .faq-side-list__item.is-active {
+  color: #fff !important;
+  background: linear-gradient(135deg, #D4884A 0%, #C97A2B 100%) !important;
+  box-shadow: 0 8px 18px rgba(201,122,43,.18) !important;
+}
+
+.in-index .faq-block .faq-content {
+  flex: 1 !important;
+  background: var(--color-tertiary, #FAF3EB) !important;
+  border: 1px solid #E5DDD2 !important;
+  border-radius: 22px !important;
+  overflow: hidden !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.in-index .faq-block .faq-content-title {
+  background: linear-gradient(135deg, #D4884A 0%, #C97A2B 100%) !important;
+  color: #fff !important;
+  padding: 14px 22px !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  text-align: center !important;
+}
+
+.in-index .faq-block .accordion {
+  padding: 16px 20px 18px !important;
+  background: var(--color-tertiary, #FAF3EB) !important;
+}
+
+.in-index .faq-block .accordion__item {
+  background: #fff !important;
+  border: 1px solid rgba(66,62,62,.06) !important;
+  border-radius: 14px !important;
+  margin-bottom: 10px !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 10px rgba(66,62,62,.04) !important;
+}
+
+.in-index .faq-block .accordion__trigger {
+  display: flex !important;
+  align-items: center !important;
+  padding: 14px 46px 14px 18px !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  color: #000000 !important;
+  cursor: pointer !important;
+}
+
+.in-index .faq-block .accordion__trigger:hover {
+  color: #C97A2B !important;
+}
+
+.in-index .faq-block .accordion__content {
+  padding: 0 18px 16px !important;
+  color: #000000 !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+.in-index .faq-block .accordion__content p {
+  margin: 0 !important;
+  border-top: 1px solid rgba(66,62,62,.08) !important;
+  padding-top: 14px !important;
+}
+
+
+/* ============================= */
+/* SUPPORT BOX FINAL */
+/* ============================= */
+
+.sidebar-inner .box-support,
+.sidebar-inner .banner.box-support {
+  background: var(--color-tertiary, #FAF3EB) !important;
+  background-color: var(--color-tertiary, #FAF3EB) !important;
+  border: 1px solid #DDD3C7 !important;
+  border-radius: 24px !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+
+.sidebar-inner .box-support .timber-support {
+  background: var(--color-tertiary, #FAF3EB) !important;
+  background-color: var(--color-tertiary, #FAF3EB) !important;
+  border-radius: 24px !important;
+  padding: 30px 26px !important;
+  box-shadow: none !important;
+}
+
+.sidebar-inner .box-support .support__content {
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.sidebar-inner .box-support .support__eyebrow {
+  display: inline-block !important;
+  color: #C97A2B !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  margin-bottom: 10px !important;
+}
+
+.sidebar-inner .box-support .support__title {
+  color: #000000 !important;
+  font-size: 24px !important;
+  line-height: 1.15 !important;
+  font-weight: 800 !important;
+  margin: 0 0 12px !important;
+}
+
+.sidebar-inner .box-support .support__subtitle {
+  color: #000000 !important;
+  font-size: 15px !important;
+  line-height: 1.55 !important;
+  margin-bottom: 24px !important;
+}
+
+.sidebar-inner .box-support .support__contact {
+  margin-bottom: 24px !important;
+}
+
+.sidebar-inner .box-support .support__item {
+  display: block !important;
+  color: #000000 !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  margin-bottom: 10px !important;
+}
+
+.sidebar-inner .box-support .support__item:hover {
+  color: #C97A2B !important;
+}
+
+.sidebar-inner .box-support .timber-support-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #D4884A !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 999px !important;
+  padding: 14px 24px !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+  box-shadow: 0 8px 18px rgba(201,122,43,.16) !important;
+  transition: .2s ease !important;
+}
+
+.sidebar-inner .box-support .timber-support-btn:hover {
+  background: #B8692E !important;
+  color: #fff !important;
+  transform: translateY(-1px);
+}
+
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width: 768px) {
+  .in-index .faq-block .faq-group {
+    display: block !important;
+  }
+
+  .in-index .faq-block .faq-side {
+    width: 100% !important;
+    padding-top: 0 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .in-index .faq-block .faq-side-list {
+    display: flex !important;
+    gap: 8px !important;
+    overflow-x: auto !important;
+  }
+
+  .in-index .faq-block .faq-side-list__item {
+    white-space: nowrap !important;
+    margin-bottom: 0 !important;
+  }
+
+  .sidebar-inner .box-support .timber-support {
+    padding: 24px 20px !important;
+  }
+
+  .sidebar-inner .box-support .support__title {
+    font-size: 22px !important;
+  }
+
+  .sidebar-inner .box-support .support__subtitle {
+    font-size: 14px !important;
+  }
+
+  .sidebar-inner .box-support .timber-support-btn {
+    width: 100% !important;
+  }
+}
+
+.timber-section-title {
+  text-align: center !important;
+  color: #000000 !important;
+  font-size: 32px !important;
+  line-height: 1.2 !important;
+  font-weight: 800 !important;
+  margin: 0 0 26px !important;
+}
+
+
+/* FAQ ACTIVE COLORS */
+.in-index .faq-block .faq-content-title,
+.in-index .faq-block .faq-side-list__item.is-active {
+    background: linear-gradient(135deg, #D4884A 0%, #C97A2B 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+/* FAQ ACTIVE TAB TEXT */
+.in-index .faq-block .faq-side-list__item.is-active {
+    color: #ffffff !important;
+}
+
+/* FAQ HEADER */
+.in-index .faq-block .faq-content-title strong {
+    color: #ffffff !important;
+}
+
+
+/* FAQ MAIN TITLE BLACK */
+.in-index .faq-block .homepage-group-title {
+    color: #000000 !important;
+}
+
+
+.sidebar-inner .box-support,
+.sidebar-inner .banner.box-support {
+    border: 1px solid #dfe5ec !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03) !important;
+}
+
+
+.sidebar-inner .box-support,
+.sidebar-inner .banner.box-support {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border: 2px solid #dfe5ec !important;
+    border-radius: 24px !important;
+    box-shadow: none !important;
+}
+
+.sidebar-inner .box-support .timber-support {
+    background: #FAF3EB !important;
+    background-color: #FAF3EB !important;
+    border-radius: 22px !important;
+}
+
+
+/* HOMEPAGE - NAŠE TIPY / SLUŽBY - OBRÁZKY */
+.service-block .service__image-block {
+    display: block !important;
+    aspect-ratio: 16 / 9 !important;
+    height: auto !important;
+    overflow: hidden !important;
+    border-radius: 18px 18px 0 0 !important;
+}
+
+.service-block .service__image-block img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    display: block !important;
+}
+
+
+/* HOMEPAGE - SLUŽBY / NAŠE TIPY - ORANŽOVÉ TLAČIDLÁ */
+.service-block .service__text-block .btn,
+.service-block .service__text-block .btn-secondary {
+    background: #D4884A !important;
+    background-color: #D4884A !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: 0 8px 18px rgba(201,122,43,.16) !important;
+}
+
+.service-block .service__text-block .btn:hover,
+.service-block .service__text-block .btn-secondary:hover {
+    background: #B8692E !important;
+    background-color: #B8692E !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+
+.custom-footer__onlinePayments .text-center {
+  text-align: left !important;
+}
+
+.timber-payments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.timber-payment-card {
+  background: #fff;
+  border-radius: 14px;
+  width: 112px;
+  height: 58px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+
+.timber-payment-card img {
+  max-width: 82px;
+  max-height: 32px;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .timber-payments {
+    gap: 10px;
+  }
+
+  .timber-payment-card {
+    width: calc(50% - 5px);
+    height: 54px;
+  }
+
+  .timber-payment-card img {
+    max-width: 86px;
+    max-height: 30px;
+  }
+}
+
+
+/* Upozornenie v košíku - Timber Store */
+.cart-content .site-msg-custom {
+    background: #FAF8F5 !important;
+    color: #423E3E !important;
+    border: 1px solid #E9E1D8 !important;
+    border-radius: 18px !important;
+    box-shadow: 0 8px 24px rgba(66,62,62,.08) !important;
+}
+
+.cart-content .site-msg-custom::before {
+    color: #D4884A !important;
+    border-color: #D4884A !important;
+}
+
+.cart-content .site-msg-custom ul {
+    padding-left: 20px !important;
+}
+
+.cart-content .site-msg-custom li {
+    color: #423E3E !important;
+    line-height: 1.6 !important;
+}
+
+.cart-content .site-msg-custom li::marker {
+    color: #D4884A !important;
+}
+
+@media (max-width: 768px) {
+
+    .cart-content .site-msg-custom {
+        border-radius: 14px !important;
+    }
+
+    .cart-content .site-msg-custom li {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+    }
+}
+
+
+/* Košík – doprava zdarma progress */
+.price-range {
+    background: #FAF3EB !important;
+    color: #423E3E !important;
+    border: 1px solid #E9E1D8 !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+}
+
+.extra-delivery {
+    background: #E8B17A !important;
+    color: #423E3E !important;
+    border-radius: 16px 0 0 16px !important;
+}
+
+.extra-delivery:before {
+    color: #423E3E !important;
+}
+
+.price-range span,
+.extra-delivery span,
+.extras-wrap span {
+    color: #423E3E !important;
+    font-weight: 600 !important;
+}
+
+
+/* =========================================================
+   EMPTY CART – TIMBER STORE
+   ========================================================= */
+
+.in-cart .timber-empty-cart {
+    max-width: 1180px !important;
+    margin: 24px auto 50px !important;
+}
+
+.in-cart .timber-empty-cart__head {
+    text-align: center !important;
+    margin-bottom: 26px !important;
+}
+
+.in-cart .timber-empty-cart__head h2 {
+    margin: 0 0 8px !important;
+    color: #2f2b29 !important;
+    font-size: 30px !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+}
+
+.in-cart .timber-empty-cart__head p {
+    margin: 0 !important;
+    color: #6c625b !important;
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+}
+
+.in-cart .timber-empty-cart__categories {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+    margin: 0 0 38px !important;
+}
+
+.in-cart .timber-empty-cart__category {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 68px !important;
+    padding: 14px 16px !important;
+    background: #FAF3EB !important;
+    border: 1px solid #E9E1D8 !important;
+    border-radius: 14px !important;
+    color: #423E3E !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    line-height: 1.25 !important;
+    font-weight: 800 !important;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease !important;
+}
+
+.in-cart .timber-empty-cart__category:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(66,62,62,.08) !important;
+    border-color: #D4884A !important;
+    color: #C97A2B !important;
+}
+
+.in-cart .timber-empty-cart__news {
+    margin-top: 8px !important;
+}
+
+.in-cart .timber-empty-cart__news-title {
+    text-align: center !important;
+    margin: 0 0 22px !important;
+    color: #2f2b29 !important;
+    font-size: 26px !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+}
+
+.in-cart .timber-empty-cart__products {
+    margin-bottom: 26px !important;
+}
+
+.in-cart .timber-empty-cart__back {
+    text-align: center !important;
+    margin-top: 28px !important;
+}
+
+.in-cart .timber-empty-cart__back a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 44px !important;
+    padding: 11px 22px !important;
+    background: #D4884A !important;
+    color: #ffffff !important;
+    border-radius: 999px !important;
+    text-decoration: none !important;
+    font-weight: 800 !important;
+    box-shadow: 0 8px 18px rgba(201,122,43,.16) !important;
+}
+
+.in-cart .timber-empty-cart__back a:hover {
+    background: #B8692E !important;
+    color: #ffffff !important;
+}
+
+.in-cart .timber-empty-cart-ready .cart-empty,
+.in-cart .timber-empty-cart-ready .empty-cart,
+.in-cart .timber-empty-cart-ready .cart-empty-wrapper {
+    display: none !important;
+}
+
+@media (max-width: 991px) {
+    .in-cart .timber-empty-cart__categories {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .in-cart .timber-empty-cart {
+        margin: 18px auto 36px !important;
+    }
+
+    .in-cart .timber-empty-cart__head h2 {
+        font-size: 24px !important;
+    }
+
+    .in-cart .timber-empty-cart__head p {
+        font-size: 14px !important;
+    }
+
+    .in-cart .timber-empty-cart__categories {
+        gap: 10px !important;
+        margin-bottom: 30px !important;
+    }
+
+    .in-cart .timber-empty-cart__category {
+        min-height: 62px !important;
+        padding: 12px 10px !important;
+        font-size: 13px !important;
+        border-radius: 12px !important;
+    }
+
+    .in-cart .timber-empty-cart__news-title {
+        font-size: 22px !important;
+    }
+}
+
+
+/* HOMEPAGE SLUŽBY – FINÁLNE TLAČIDLÁ */
+.service-block .service__text-block {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+.service-block .service__text-block .btn,
+.service-block .service__text-block .btn-secondary,
+.service-block .service__text-block a.btn,
+.service-block .service__text-block a.btn-secondary {
+    position: static !important;
+    float: none !important;
+
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+
+    transform: none !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    align-self: center !important;
+
+    width: 200px !important;
+    max-width: calc(100% - 30px) !important;
+
+    margin: auto auto 10px auto !important;
+
+    background: #D4884A !important;
+    background-color: #D4884A !important;
+    color: #ffffff !important;
+
+    border: none !important;
+    border-radius: 999px !important;
+
+    text-decoration: none !important;
+}
+
+.service-block .service__text-block .btn:hover,
+.service-block .service__text-block .btn-secondary:hover,
+.service-block .service__text-block a.btn:hover,
+.service-block .service__text-block a.btn-secondary:hover,
+.service-block .service__text-block .btn:focus,
+.service-block .service__text-block .btn-secondary:focus,
+.service-block .service__text-block .btn:active,
+.service-block .service__text-block .btn-secondary:active {
+    position: static !important;
+    float: none !important;
+
+    left: auto !important;
+    right: auto !important;
+
+    transform: none !important;
+
+    background: #B8692E !important;
+    background-color: #B8692E !important;
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   HEADER + MEGA MENU – TIMBER STORE FINAL
+   ========================================================= */
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+    .navigation-in > ul > li {
+        margin: 0 !important;
+        border: 0 !important;
+    }
+
+    .navigation-in > ul > li > a {
+        position: relative !important;
+
+        height: 54px !important;
+        margin-top: 8px !important;
+        margin-bottom: 0 !important;
+
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+
+        padding-left: clamp(7px, 0.55vw, 13px) !important;
+        padding-right: clamp(7px, 0.55vw, 13px) !important;
+
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        box-sizing: border-box !important;
+        white-space: nowrap !important;
+
+        font-size: 15px !important;
+
+        border: 0 !important;
+        border-radius: 9px 9px 0 0 !important;
+
+        background: transparent !important;
+
+        transition:
+            background-color .18s ease,
+            color .18s ease !important;
+    }
+
+
+    .navigation-in > ul > li:hover > a {
+        background: #ffffff !important;
+        color: #2f2b29 !important;
+
+        border: 0 !important;
+        outline: 0 !important;
+        box-shadow: none !important;
+    }
+
+
+    .navigation-in > ul > li.ext > a::after {
+        content: "" !important;
+
+        position: static !important;
+
+        display: inline-block !important;
+        flex: 0 0 10px !important;
+
+        width: 10px !important;
+        height: 10px !important;
+
+        min-width: 10px !important;
+        min-height: 10px !important;
+
+        max-width: 10px !important;
+        max-height: 10px !important;
+
+        margin: 0 0 0 6px !important;
+        padding: 0 !important;
+
+        align-self: center !important;
+
+        background-color: currentColor !important;
+
+        -webkit-mask:
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M1.5 3.5L5 7l3.5-3.5' fill='none' stroke='black' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+            center / 10px 10px no-repeat !important;
+
+        mask:
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M1.5 3.5L5 7l3.5-3.5' fill='none' stroke='black' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+            center / 10px 10px no-repeat !important;
+
+        transform: rotate(0deg) !important;
+        transform-origin: center center !important;
+
+        transition: transform .18s ease !important;
+    }
+
+    .navigation-in > ul > li.ext:hover > a::after {
+        transform: rotate(180deg) !important;
+        background-color: #2f2b29 !important;
+    }
+
+
+    #navigation,
+    .navigation-in,
+    .navigation-in > ul,
+    .navigation-in > ul > li.ext > ul,
+    #navigation .menu-level-2 {
+        border: 0 !important;
+        outline: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .navigation-in > ul > li.ext > ul,
+    #navigation .menu-level-2 {
+        background: #ffffff !important;
+    }
+
+
+    #navigation .menu-level-2 {
+        display: grid !important;
+
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr)) !important;
+
+        gap: 14px !important;
+
+        align-items: stretch !important;
+
+        padding: 14px 6px 18px !important;
+    }
+
+
+    #navigation .menu-level-2 > li {
+        position: relative !important;
+
+        width: auto !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        min-height: 84px !important;
+
+        margin: 0 !important;
+
+        padding: 14px 40px 14px 16px !important;
+
+        box-sizing: border-box !important;
+
+        display: flex !important;
+        align-items: center !important;
+
+        background: #ffffff !important;
+
+        border: 1px solid #ece7e1 !important;
+        border-radius: 9px !important;
+
+        box-shadow:
+            0 2px 6px rgba(0,0,0,.025) !important;
+
+        cursor: pointer !important;
+
+        transition:
+            background-color .18s ease,
+            border-color .18s ease,
+            box-shadow .18s ease,
+            transform .18s ease !important;
+    }
+
+
+    #navigation .menu-level-2 > li:hover {
+        background: #FFF8F1 !important;
+
+        border-color: #D4884A !important;
+
+        box-shadow:
+            0 4px 12px rgba(201,122,74,.10) !important;
+
+        transform: translateY(-1px) !important;
+    }
+
+
+    #navigation .menu-level-2 > li > a.menu-image {
+        flex: 0 0 58px !important;
+
+        width: 58px !important;
+
+        margin: 0 14px 0 0 !important;
+        padding: 0 !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    #navigation .menu-level-2 > li > a.menu-image img {
+        width: 56px !important;
+        height: 56px !important;
+
+        max-width: 56px !important;
+        max-height: 56px !important;
+
+        object-fit: contain !important;
+        display: block !important;
+    }
+
+
+    #navigation .menu-level-2 > li > div {
+        flex: 1 1 auto !important;
+
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #navigation .menu-level-2 > li > div > a {
+        color: #222222 !important;
+
+        font-size: 15px !important;
+        line-height: 1.25 !important;
+        font-weight: 800 !important;
+
+        text-decoration: none !important;
+    }
+
+    #navigation .menu-level-2 > li > div > a > span {
+        position: relative !important;
+        display: inline-block !important;
+
+        color: inherit !important;
+
+        transition: color .18s ease !important;
+    }
+
+
+    #navigation .menu-level-2 > li > div > a > span::after {
+        content: "" !important;
+
+        position: absolute !important;
+
+        left: 0 !important;
+        bottom: -4px !important;
+
+        width: 0 !important;
+        height: 2px !important;
+
+        background: #D4884A !important;
+        border-radius: 2px !important;
+
+        transition: width .18s ease !important;
+    }
+
+    #navigation .menu-level-2 > li:hover > div > a > span {
+        color: #C97A2B !important;
+    }
+
+    #navigation .menu-level-2 > li:hover > div > a > span::after {
+        width: 100% !important;
+    }
+
+
+    #navigation .menu-level-2 > li::after {
+        content: "" !important;
+
+        position: absolute !important;
+
+        right: 16px !important;
+        top: 50% !important;
+
+        width: 8px !important;
+        height: 8px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        border: 0 !important;
+        border-right: 2px solid #D4884A !important;
+        border-bottom: 2px solid #D4884A !important;
+
+        background: transparent !important;
+
+        transform:
+            translateY(-50%)
+            rotate(-45deg) !important;
+
+        pointer-events: none !important;
+
+        transition:
+            border-color .18s ease,
+            transform .18s ease !important;
+    }
+
+    #navigation .menu-level-2 > li:hover::after {
+        border-right-color: #C97A2B !important;
+        border-bottom-color: #C97A2B !important;
+    }
+
+
+    #navigation .menu-level-3,
+    #navigation .menu-level-4,
+    #navigation .menu-level-5 {
+        display: none !important;
+    }
+
+    #navigation .menu-level-2 .show-more,
+    #navigation .menu-level-2 .menu-more,
+    #navigation .menu-level-2 .more {
+        display: none !important;
+    }
+}
+
+
+/* =========================================================
+   MOBIL / TOUCH – ODOZVA PRI ŤUKNUTÍ
+   ========================================================= */
+
+@media (max-width: 767px), (hover: none) {
+
+    #navigation .menu-level-2 > li {
+        -webkit-tap-highlight-color: transparent !important;
+
+        transition:
+            background-color .12s ease,
+            border-color .12s ease,
+            box-shadow .12s ease,
+            transform .12s ease !important;
+    }
+
+    #navigation .menu-level-2 > li:active {
+        background: #FFF3E7 !important;
+
+        border-color: #D4884A !important;
+
+        box-shadow:
+            0 3px 10px rgba(201,122,43,.16) !important;
+
+        transform: scale(.985) !important;
+    }
+}
+
+
+/* =========================================================
+   PRVÁ HLAVNÁ KATEGÓRIA – SYMETRICKÝ TAB
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+    .navigation-in > ul > li:first-child > a {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+    }
+
+}
+
+
+/* =========================================================
+   TIMBER STORE – VEĽKOSŤ LOGA V HLAVIČKE
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+    /* Konštrukcia hlavičky a stránky nesmie animovať zmeny rozmerov.
+       Hover animácie samotných odkazov a kariet zostávajú zachované. */
+    #header,
+    #header .navigation-wrapper,
+    #header .header-top,
+    #header .site-name-wrapper,
+    #header .site-name,
+    #header .site-name a,
+    #header .site-name img,
+    #header .search,
+    #header .navigation-buttons,
+    .content-wrapper,
+    .content-wrapper > .sidebar,
+    .box.box-categories,
+    #categories {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    .site-name a img,
+    #header .site-name a img {
+        height: 68px !important;
+        width: 310px !important;
+        aspect-ratio: 310 / 68 !important;
+
+        max-height: none !important;
+        max-width: 100% !important;
+
+        object-fit: contain !important;
+    }
+
+    /* Miesto pre logo je rezervované ešte pred načítaním obrázka,
+       takže vyhľadávanie a košík nemenia polohu. */
+    #header .site-name a {
+        display: block !important;
+        width: 310px !important;
+        height: 68px !important;
+        max-width: 100% !important;
+    }
+
+    .site-name,
+    #header .site-name {
+        width: auto !important;
+        max-width: none !important;
+    }
+}
+
+/* =========================================================
+   KATEGÓRIA – PODKATEGÓRIE V HLAVNOM OBSAHU / HOVER
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+    .subcategories.with-image > div > a,
+    .subcategories.with-image li > a,
+    .subcategories > div > a,
+    .subcategories li > a {
+        transition:
+            background-color .18s ease,
+            border-color .18s ease,
+            box-shadow .18s ease,
+            transform .18s ease !important;
+    }
+
+    .subcategories.with-image > div > a:hover,
+    .subcategories.with-image li > a:hover,
+    .subcategories > div > a:hover,
+    .subcategories li > a:hover {
+        background: #FFF8F1 !important;
+        border-color: #D4884A !important;
+        box-shadow: 0 6px 16px rgba(201,122,43,.12) !important;
+        transform: translateY(-2px) !important;
+    }
+
+    .subcategories.with-image > div > a:hover span,
+    .subcategories.with-image li > a:hover span,
+    .subcategories > div > a:hover span,
+    .subcategories li > a:hover span {
+        color: #C97A2B !important;
+    }
+}
+
+
+/* =========================================================
+   TIMBER STORE – APOLLO SIDEBAR / FINAL
+   Stabilný vzhľad sa vykreslí okamžite, bez čakania na
+   Apollo triedu .after-load. Tým sa odstráni prebliknutie
+   čiernej hlavičky a starých ikon + / −.
+   timber-menu.js pridáva:
+   .timber-parent-link  = nadradené kategórie v breadcrumb ceste
+   .timber-current-link = presne aktuálna kategória
+   ========================================================= */
+
+/* Stabilná šírka stránky bez zmeny po objavení scrollbaru. */
+html {
+    overflow-y: scroll !important;
+    scrollbar-gutter: stable !important;
+}
+
+/* Nová stránka sa sprístupní až po zostavení DOM. Triedu pridáva malý
+   jednorazový skript v HEAD a potom ju už iba odstráni. Nepoužíva sa
+   nestabilná Shoptet trieda .after-load. */
+html.timber-page-loading body {
+    visibility: hidden !important;
+}
+
+/* Prehliadač počas navigácie podrží hotovú snímku pôvodnej stránky. */
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: none !important;
+}
+
+@media (min-width: 768px) {
+
+    /* Finálny obal a hlavička bez závislosti od .after-load */
+    .box.box-categories {
+        background: #FAF3EB !important;
+        border: 2px solid #E0E5EE !important;
+        border-radius: 20px !important;
+        padding: 30px !important;
+        box-shadow: none !important;
+    }
+
+    .box.box-categories > .pageElement__heading {
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+        bottom: auto !important;
+        left: 0 !important;
+        display: block !important;
+        min-height: 54px !important;
+        margin: -32px -31px 0 !important;
+        padding: 16px 20px 16px 60px !important;
+        box-sizing: border-box !important;
+        background: #C97A2B !important;
+        color: #FFFFFF !important;
+        border: 0 !important;
+        border-radius: 20px 20px 0 0 !important;
+        font-size: 20px !important;
+        line-height: 22px !important;
+        font-weight: 300 !important;
+    }
+
+    /* Apollo ikonový font nahradíme čistým CSS chevronom. */
+    #categories .cat-trigger {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: #7C7E8F !important;
+        font-family: inherit !important;
+    }
+
+    #categories .cat-trigger::before {
+        content: "" !important;
+        display: block !important;
+        width: 7px !important;
+        height: 7px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: 0 !important;
+        border-right: 1.5px solid currentColor !important;
+        border-bottom: 1.5px solid currentColor !important;
+        font-family: inherit !important;
+        transform: rotate(-45deg) !important;
+        transform-origin: center !important;
+        transition: transform .16s ease !important;
+    }
+
+    #categories .categories.expanded > .topic > a > .cat-trigger::before,
+    #categories li.expanded > a > .cat-trigger::before {
+        transform: rotate(45deg) !important;
+    }
+
+    #categories a[href] {
+        transition:
+            background-color .16s ease,
+            color .16s ease,
+            box-shadow .16s ease !important;
+    }
+
+    #categories a[href]:hover {
+        background: #FFF8F1 !important;
+        color: #A85F29 !important;
+        font-weight: 600 !important;
+        border-radius: 5px !important;
+        box-shadow:
+            inset 0 0 0 1px rgba(212,136,74,.32) !important;
+        transform: none !important;
+    }
+
+    #categories .categories.active > .topic > a {
+        background: #F8EEE4 !important;
+        color: #5F4635 !important;
+        font-weight: 700 !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow:
+            inset 3px 0 0 rgba(212,136,74,.75) !important;
+        transform: none !important;
+    }
+
+    /* Server pozná aktuálnu položku skôr, než sa spustí JS. */
+    #categories .categories.active > .topic.active > a,
+    #categories li.active > a {
+        background: #D4884A !important;
+        color: #FFFFFF !important;
+        font-weight: 800 !important;
+        border-radius: 0 !important;
+        box-shadow:
+            inset 3px 0 0 #B8692E !important;
+    }
+
+    #categories .categories.active > .topic.child-active > a {
+        background: #F2D2B3 !important;
+        color: #87491F !important;
+        font-weight: 700 !important;
+        box-shadow:
+            inset 3px 0 0 rgba(212,136,74,.75) !important;
+    }
+
+    #categories .categories.active > .topic.active > a .cat-trigger,
+    #categories li.active > a .cat-trigger {
+        color: #FFFFFF !important;
+    }
+
+    #categories .categories.active > .topic > a:hover {
+        background: #F3DFC9 !important;
+        color: #A85F29 !important;
+    }
+
+    #categories a.timber-parent-link {
+        background: #F2D2B3 !important;
+        color: #87491F !important;
+        font-weight: 700 !important;
+        border-radius: 0 !important;
+        box-shadow:
+            inset 3px 0 0 rgba(212,136,74,.75) !important;
+        transform: none !important;
+    }
+
+    #categories a.timber-parent-link:hover {
+        background: #EBC39E !important;
+        color: #793D18 !important;
+        font-weight: 700 !important;
+        border-radius: 5px !important;
+        box-shadow:
+            inset 3px 0 0 #D4884A,
+            inset 0 0 0 1px rgba(212,136,74,.38) !important;
+        transform: none !important;
+    }
+
+    #categories .categories.active > .topic > a.timber-parent-link {
+        background: #F2D2B3 !important;
+        color: #87491F !important;
+        font-weight: 700 !important;
+    }
+
+    /* Šípky v aktuálnej otvorenej ceste sú čierne,
+       väčšie a hrubšie. Ostatné zostávajú jemné sivé. */
+    #categories a.timber-parent-link .cat-trigger,
+    #categories a.timber-parent-link .cat-trigger::before,
+    #categories .categories.active > .topic.child-active > a .cat-trigger,
+    #categories .categories.active > .topic.child-active > a .cat-trigger::before {
+        color: #2F2B29 !important;
+    }
+
+    #categories a.timber-parent-link .cat-trigger::before,
+    #categories .categories.active > .topic.child-active > a .cat-trigger::before {
+        width: 9px !important;
+        height: 9px !important;
+        border-right: 2px solid currentColor !important;
+        border-bottom: 2px solid currentColor !important;
+    }
+
+    /* Bodku dostanú iba priame konečné možnosti pod práve
+       otvorenou vnorenou kategóriou. Jej súrodenci ju nemajú. */
+    #categories li.expanded > ul > li:not(.expandable) > a::before {
+        content: "" !important;
+        display: inline-block !important;
+        width: 4px !important;
+        height: 4px !important;
+        margin-left: -17px !important;
+        margin-right: 13px !important;
+        padding: 0 !important;
+        vertical-align: middle !important;
+        background: currentColor !important;
+        border: 0 !important;
+        border-radius: 50% !important;
+        opacity: .55 !important;
+        transform: none !important;
+        pointer-events: none !important;
+    }
+
+    #categories a.timber-current-link {
+        background: #D4884A !important;
+        color: #FFFFFF !important;
+        font-weight: 800 !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow:
+            inset 3px 0 0 #B8692E !important;
+        transform: none !important;
+    }
+
+    #categories a.timber-current-link:hover {
+        background: #C67737 !important;
+        color: #FFFFFF !important;
+        font-weight: 800 !important;
+        border-radius: 0 !important;
+        box-shadow:
+            inset 3px 0 0 #A85F29 !important;
+        transform: none !important;
+    }
+
+    /* Na produktovej stránke je aktuálna kategória označená
+       serverovou triedou .active, nie vždy .timber-current-link. */
+    #categories .categories.active > .topic.active > a:hover,
+    #categories li.active > a:hover {
+        background: #C67737 !important;
+        color: #FFFFFF !important;
+        font-weight: 800 !important;
+        border-radius: 0 !important;
+        box-shadow:
+            inset 3px 0 0 #A85F29 !important;
+    }
+
+    #categories .categories.active > .topic > a.timber-current-link {
+        background: #D4884A !important;
+        color: #FFFFFF !important;
+        font-weight: 800 !important;
+    }
+
+    #categories a.timber-current-link .cat-trigger,
+    #categories a.timber-current-link .cat-trigger::before {
+        color: #FFFFFF !important;
+    }
+
+    /* Aktuálna oranžová položka má bielu šípku alebo bodku. */
+    #categories .categories.active > .topic.active > a .cat-trigger,
+    #categories .categories.active > .topic.active > a .cat-trigger::before,
+    #categories li.active > a .cat-trigger,
+    #categories li.active > a .cat-trigger::before {
+        color: #FFFFFF !important;
+    }
+
+    #categories li.expanded > ul > li.active:not(.expandable) > a::before,
+    #categories li.expanded > ul > li:not(.expandable) > a.timber-current-link::before {
+        background: #FFFFFF !important;
+        opacity: 1 !important;
+    }
+}
+
+/* =========================================================
+   TIMBER STORE – PRODUKTOVÉ NÁZVY / SPRÁVNE ZALAMOVANIE
+   Prirodzené zalamovanie iba medzi slovami.
+   ========================================================= */
+
+.p-detail-inner-header h1,
+.p-detail h1,
+.product-top h1,
+h1[itemprop="name"],
+.products-block .name,
+.products-block .name a,
+.product .name,
+.product .name a,
+.product-name {
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    word-wrap: normal !important;
+    hyphens: none !important;
+}
+
+/* =========================================================
+   PRODUKTOVÉ KARTY – ZJEDNOTENIE VÝŠKY NÁZVU A CENY
+   ========================================================= */
+
+.products .product,
+.products-block .product,
+.products .p,
+.products-block .p {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+}
+
+.products .p-in,
+.products-block .p-in,
+.products .p-in-in,
+.products-block .p-in-in {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+}
+
+.products .name,
+.products-block .name,
+.products .name a,
+.products-block .name a,
+.products .p .name,
+.products-block .p .name,
+.products .p .name a,
+.products-block .p .name a {
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 3 !important;
+    line-clamp: 3 !important;
+    overflow: hidden !important;
+    line-height: 1.3 !important;
+    min-height: calc(1.3em * 3) !important;
+    max-height: calc(1.3em * 3) !important;
+    margin-bottom: 12px !important;
+}
+
+.products .p-bottom,
+.products-block .p-bottom {
+    margin-top: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.products .prices,
+.products-block .prices,
+.products .price,
+.products-block .price {
+    margin-top: 0 !important;
+}
+
+.products .p-tools,
+.products-block .p-tools,
+.products .p-bottom .btn,
+.products-block .p-bottom .btn {
+    margin-top: 12px !important;
+}
+
+
+/* =========================================================
+   PRODUKTOVÉ KARTY – MOBIL
+   Apollo má na mobile vlastné pravidlá pre názov produktu.
+   Tu ich cielene prepisujeme: menší font + 4 riadky.
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .products-block .product .name,
+    .products-block .product .name a,
+    .products .product .name,
+    .products .product .name a,
+    .product .name,
+    .product .name a,
+    .p .name,
+    .p .name a {
+        font-size: 14px !important;
+        line-height: 1.25 !important;
+
+        display: -webkit-box !important;
+        -webkit-box-orient: vertical !important;
+        -webkit-line-clamp: 4 !important;
+
+        overflow: hidden !important;
+
+        min-height: calc(1.25em * 4) !important;
+        max-height: calc(1.25em * 4) !important;
+    }
+
+}
+
+/* =========================================================
+   TIMBER STORE – DESKTOP FILTER / STABILNÉ ĎALŠIE + MENEJ
+   ĎALŠIE/MENEJ je vždy posledná položka prvého riadku.
+   Rozšírené filtre začínajú až pod ním.
+   ========================================================= */
+
+@media (min-width: 992px) {
+
+    #filters-wrapper {
+        margin: 18px 0 14px !important;
+    }
+
+    #filters-wrapper > .filters-wrapper {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .filters-unveil-button-wrapper {
+        display: none !important;
+    }
+
+    #filters.filters,
+    #filters > .filter-sections {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+    }
+
+    #filters > #price-filter-form,
+    #filters > .filter-sections > .filter-headline,
+    #filters > .filter-sections > .filter-section-button,
+    #category-filter-hover > .filter-section-count {
+        display: none !important;
+    }
+
+    #category-filter-hover {
+        position: relative !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: stretch !important;
+        justify-content: center !important;
+        gap: 0 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 56px !important;
+        margin: 0 !important;
+        padding: 0 12px !important;
+        box-sizing: border-box !important;
+        background: #FAF3EB !important;
+        border: 1px solid #E9E1D8 !important;
+        border-radius: 10px !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+    }
+
+    #category-filter-hover > .slider-wrapper,
+    #category-filter-hover > .filter-section:not(.filter-section-count) {
+        position: relative !important;
+        order: 0 !important;
+        flex: 0 0 auto !important;
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+
+    #category-filter-hover > .slider-wrapper > h4,
+    #category-filter-hover > .filter-section:not(.filter-section-count) > h4 {
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        height: 56px !important;
+        min-height: 56px !important;
+        width: auto !important;
+        margin: 0 !important;
+        padding: 0 36px 0 17px !important;
+        box-sizing: border-box !important;
+        background: transparent !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        color: #423E3E !important;
+        font-size: 13px !important;
+        line-height: 1 !important;
+        font-weight: 700 !important;
+        white-space: nowrap !important;
+        cursor: pointer !important;
+        transition: background-color .16s ease, color .16s ease !important;
+    }
+
+    #category-filter-hover > .slider-wrapper > h4:hover,
+    #category-filter-hover > .filter-section:not(.filter-section-count) > h4:hover {
+        background: rgba(255,255,255,.55) !important;
+        color: #C97A2B !important;
+    }
+
+    #category-filter-hover > .slider-wrapper > h4::before,
+    #category-filter-hover > .filter-section:not(.filter-section-count) > h4::before {
+        content: none !important;
+        display: none !important;
+    }
+
+    #category-filter-hover > .slider-wrapper > h4::after,
+    #category-filter-hover > .filter-section:not(.filter-section-count) > h4::after {
+        content: "" !important;
+        position: absolute !important;
+        right: 15px !important;
+        top: 50% !important;
+        width: 7px !important;
+        height: 7px !important;
+        margin-top: -5px !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: 0 !important;
+        border-right: 1.5px solid currentColor !important;
+        border-bottom: 1.5px solid currentColor !important;
+        transform: rotate(45deg) !important;
+        pointer-events: none !important;
+    }
+
+    #category-filter-hover > .slider-wrapper::after,
+    #category-filter-hover > .filter-section:not(.filter-section-count)::after {
+        content: "" !important;
+        position: absolute !important;
+        right: 0 !important;
+        top: 15px !important;
+        bottom: 15px !important;
+        width: 1px !important;
+        background: #E5DDD2 !important;
+        pointer-events: none !important;
+    }
+
+    #category-filter-hover > .slider-wrapper > .price-filter,
+    #category-filter-hover > .filter-section > form,
+    #category-filter-hover > .filter-section > .param-filter-top {
+        position: absolute !important;
+        top: 56px !important;
+        left: 0 !important;
+        z-index: 1005 !important;
+        min-width: 240px !important;
+        max-width: 360px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Zavretý stav: všetko za limitom je skryté. */
+    #category-filter-hover:not(.timber-filter-expanded)
+    > .timber-filter-overflow {
+        display: none !important;
+    }
+
+    /* ĎALŠIE/MENEJ je vždy posledné v PRVOM riadku. */
+    #category-filter-hover > .timber-filter-more {
+        position: relative !important;
+        order: 10 !important;
+        flex: 0 0 auto !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        height: 56px !important;
+        min-height: 56px !important;
+        margin: 0 !important;
+        padding: 0 36px 0 18px !important;
+        box-sizing: border-box !important;
+        background: transparent !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        color: #C97A2B !important;
+        font-family: inherit !important;
+        font-size: 13px !important;
+        line-height: 1 !important;
+        font-weight: 800 !important;
+        text-transform: uppercase !important;
+        white-space: nowrap !important;
+        cursor: pointer !important;
+        transition: background-color .16s ease !important;
+    }
+
+    #category-filter-hover > .timber-filter-more:hover {
+        background: rgba(255,255,255,.55) !important;
+    }
+
+    #category-filter-hover > .timber-filter-more::before {
+        content: "" !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 15px !important;
+        bottom: 15px !important;
+        width: 1px !important;
+        background: #E5DDD2 !important;
+    }
+
+    #category-filter-hover > .timber-filter-more::after {
+        content: "" !important;
+        position: absolute !important;
+        right: 15px !important;
+        top: 50% !important;
+        width: 7px !important;
+        height: 7px !important;
+        margin-top: -5px !important;
+        border-right: 1.5px solid currentColor !important;
+        border-bottom: 1.5px solid currentColor !important;
+        transform: rotate(45deg) !important;
+        transition: transform .16s ease !important;
+    }
+
+    #category-filter-hover.timber-filter-expanded > .timber-filter-more::after {
+        margin-top: -1px !important;
+        transform: rotate(225deg) !important;
+    }
+
+    #category-filter-hover > .timber-filter-more[hidden] {
+        display: none !important;
+    }
+
+    /* Rozbalenie: prvý riadok ostáva rovnaký. Za MENEJ vložíme
+       pevný flex-break a až potom pokračujú ostatné filtre. */
+    #category-filter-hover.timber-filter-expanded {
+        flex-wrap: wrap !important;
+        align-content: flex-start !important;
+        padding-bottom: 7px !important;
+    }
+
+    #category-filter-hover > .timber-filter-break {
+        display: none !important;
+        order: 20 !important;
+        flex: 0 0 100% !important;
+        width: 100% !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+    }
+
+    #category-filter-hover.timber-filter-expanded > .timber-filter-break {
+        display: block !important;
+    }
+
+    #category-filter-hover.timber-filter-expanded > .timber-filter-overflow {
+        display: flex !important;
+        order: 30 !important;
+    }
+
+    /* Po zbalení nesmie zostať otvorený dropdown skrytého filtra. */
+    #category-filter-hover:not(.timber-filter-expanded)
+    > .timber-filter-overflow > form,
+    #category-filter-hover:not(.timber-filter-expanded)
+    > .timber-filter-overflow > .param-filter-top,
+    #category-filter-hover:not(.timber-filter-expanded)
+    > .timber-filter-overflow > .price-filter {
+        display: none !important;
+    }
+}
+
+/* =========================================================
+   TIMBER STORE – FILTER / FINÁLNE DOLADENIE
+   1. deliaca čiara nad filtrom na desktope
+   2. jemne upravený a centrovaný mobilný filter
+   ========================================================= */
+
+@media (min-width: 992px) {
+    /* Vizuálne oddelenie sekcie „Zobraziť viac produktov“ od filtra. */
+    body.type-category #filters-wrapper {
+        border-top: 1px solid #E3E6EA !important;
+        padding-top: 16px !important;
+        margin-top: 14px !important;
+    }
+}
+
+@media (max-width: 991px) {
+
+    /* Mobil: zachovávame pôvodné Apollo rozloženie a funkciu filtrov.
+       Meníme iba Timber Store farebnosť interakcií. */
+
+    body.type-category #filters-wrapper {
+        margin-top: 14px !important;
+        padding-top: 14px !important;
+        border-top: 1px solid #E3E6EA !important;
+    }
+
+    /* Pôvodný nápis FILTER aj pôvodné rozloženie ostávajú nedotknuté. */
+    body.type-category #filters .filter-headline {
+        color: #423E3E !important;
+        font-weight: 800 !important;
+    }
+
+    /* Bežný stav hlavičiek filtrov – nemeníme rozmery ani layout. */
+    body.type-category #filters #category-filter-hover .slider-wrapper > h4,
+    body.type-category #filters #category-filter-hover .filter-section:not(.filter-section-count) > h4 {
+        color: #423E3E !important;
+        transition: color .16s ease, border-color .16s ease, background-color .16s ease !important;
+    }
+
+    /* Aktívny / otvorený filter v Timber farbách. */
+    body.type-category #filters #category-filter-hover .slider-wrapper.is-active > h4,
+    body.type-category #filters #category-filter-hover .filter-section.is-active > h4,
+    body.type-category #filters #category-filter-hover .slider-wrapper > h4:focus,
+    body.type-category #filters #category-filter-hover .filter-section:not(.filter-section-count) > h4:focus {
+        color: #C97A2B !important;
+        border-color: #D4884A !important;
+        background-color: #FFF8F1 !important;
+    }
+
+    /* Checkboxy / voľby filtrov v našej oranžovej. */
+    body.type-category #filters input[type="checkbox"] {
+        accent-color: #D4884A !important;
+    }
+
+    body.type-category #filters input[type="checkbox"]:checked + .filter-label {
+        color: #C97A2B !important;
+        font-weight: 700 !important;
+    }
+
+    /* Pôvodné mobilné tlačidlo na otvorenie filtrov – iba farby. */
+    body.type-category #filters-wrapper .filters-unveil-button-wrapper a,
+    body.type-category #filters-wrapper .filters-unveil-button-wrapper button,
+    body.type-category #filters .toggle-filters {
+        border-color: #D4884A !important;
+        color: #C97A2B !important;
+    }
+
+    /* Desktopové pomocné prvky nášho vlastného filtra sa na mobile nezobrazujú. */
+    body.type-category #category-filter-hover > .timber-filter-more,
+    body.type-category #category-filter-hover > .timber-filter-break {
+        display: none !important;
+    }
+}
+
+/* =========================================================
+   TIMBER STORE – DESKTOP RADENIE PRODUKTOV / ČISTÝ TAB ŠTÝL
+   Obnovené po úprave filtra „ĎALŠIE“.
+   Bez samostatných boxov; aktuálne radenie = oranžový text
+   + oranžová spodná linka.
+   ========================================================= */
+
+@media (min-width: 992px) {
+
+    #category-header.category-header {
+        align-items: flex-end !important;
+        border-bottom: 1px solid #E6E6E6 !important;
+        padding-bottom: 0 !important;
+        margin-top: 6px !important;
+        margin-bottom: 22px !important;
+    }
+
+    #category-header .listSorting {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #category-header .listSorting__controls {
+        display: flex !important;
+        align-items: stretch !important;
+        gap: 4px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+    }
+
+    #category-header .listSorting__controls > li {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: 0 !important;
+    }
+
+    #category-header .listSorting__control {
+        position: relative !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-height: 50px !important;
+        margin: 0 !important;
+        padding: 0 15px !important;
+        background: transparent !important;
+        background-color: transparent !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        color: #423E3E !important;
+        font-size: 13px !important;
+        line-height: 1 !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        cursor: pointer !important;
+        transition: color .16s ease, background-color .16s ease !important;
+    }
+
+    #category-header .listSorting__control:hover {
+        color: #C97A2B !important;
+        background: #FFF8F1 !important;
+    }
+
+    #category-header .listSorting__control--current {
+        color: #D4884A !important;
+        background: transparent !important;
+        font-weight: 800 !important;
+        box-shadow: inset 0 -3px 0 #D4884A !important;
+    }
+
+    #category-header .listSorting__control--current:hover {
+        color: #C97A2B !important;
+        background: transparent !important;
+        box-shadow: inset 0 -3px 0 #C97A2B !important;
+    }
+
+    #category-header .listItemsTotal {
+        padding-bottom: 16px !important;
+        color: #7C7E8F !important;
+    }
+}

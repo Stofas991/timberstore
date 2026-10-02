@@ -134,7 +134,6 @@ function buildHead() {
 
   head.append(
     cell(t.product, 'product'),
-    cell(t.code, 'code'),
     // Availability sorting waits for Shoptet's own option (Trello C4).
     cell(t.availability, 'availability'),
     price,

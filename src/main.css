@@ -18,4 +18,5 @@
 @import './styles/overrides/subcategories.css';
 @import './styles/overrides/filters.css';
 @import './styles/overrides/product-card.css';
+@import './styles/overrides/product-detail.css';
 @import './styles/overrides/checkout.css';
