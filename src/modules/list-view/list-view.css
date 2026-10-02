@@ -7,9 +7,8 @@
 
    Content width next to the sidebar is only 772–1048 px (1200–1439 px viewport)
    and 932 px on iPad landscape (sidebar hidden, TB1) — the client's fixed columns
-   (1054 px) did not fit. Two layouts:
-   - compact (992–1439 px): product code under the name
-   - full (≥ 1440 px): product code in its own column
+   (1054 px) did not fit. The product code sits under the name ("Kód: …") at every
+   width, so the name gets the width a code column would take.
 
    !important: the cards are styled by the template and by timber-custom.css
    (legacy) with !important; list mode has to win over all of it. */
@@ -37,10 +36,7 @@
 @media (min-width: 1440px) {
   :root {
     --ts-table-gap: 16px;
-    --ts-table-cols: 80px minmax(0, 1fr) 92px 104px 124px 104px 44px;
-    --ts-table-rows: auto;
-    --ts-table-areas: 'img name code avail price qty cart';
-    --ts-table-head-areas: 'product product code avail price qty cart';
+    --ts-table-cols: 80px minmax(0, 1fr) 104px 124px 104px 44px;
   }
 }
 
@@ -117,7 +113,6 @@
   }
 
   .ts-product-table-head__cell--product { grid-area: product; }
-  .ts-product-table-head__cell--code { grid-area: code; }
   .ts-product-table-head__cell--availability { grid-area: avail; }
   .ts-product-table-head__cell--price { grid-area: price; }
   .ts-product-table-head__cell--amount { grid-area: qty; text-align: center; }
@@ -160,17 +155,6 @@
 
   .ts-product-table-head__sort--desc::after {
     opacity: 1;
-  }
-
-  /* Compact layout: no code column in the header (the code sits under the name). */
-  .ts-product-table-head__cell--code {
-    display: none;
-  }
-}
-
-@media (min-width: 1440px) {
-  .ts-product-table-head__cell--code {
-    display: block;
   }
 }
 
@@ -318,9 +302,8 @@
     overflow: visible !important;
   }
 
-  /* code — Shoptet renders "Kód: 385622" (label is a bare text node). Compact layout
-     shows it whole under the name; the full layout has a Kód column, so there the
-     label is hidden (font-size 0, see the end of the file) and only the number shows. */
+  /* code — Shoptet renders "Kód: 385622" (label is a bare text node), shown whole
+     under the name. */
   .ts-view-list #products:not(.products-related) .p > .p-code {
     grid-area: code !important;
     align-self: center !important;
@@ -439,22 +422,14 @@
   }
 }
 
-/* Compact layout (992–1439 px): name and code share the product cell — name at the
-   bottom of the first line, code right under it. Last in the file so it wins over
-   the centred defaults above. */
-@media (min-width: 992px) and (max-width: 1439px) {
+/* Name and code share the product cell — name at the bottom of the first line, code
+   right under it. Last in the file so it wins over the centred defaults above. */
+@media (min-width: 992px) {
   .ts-view-list #products:not(.products-related) a.name {
     align-self: end !important;
   }
 
   .ts-view-list #products:not(.products-related) .p > .p-code {
     align-self: start !important;
-  }
-}
-
-/* Full layout (≥ 1440 px): the code has its own Kód column — show only the number. */
-@media (min-width: 1440px) {
-  .ts-view-list #products:not(.products-related) .p > .p-code {
-    font-size: 0 !important;
   }
 }
