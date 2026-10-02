@@ -1,10 +1,93 @@
 /* Homepage Instagram block.
-   Drobnosti · on mobile 4 photos in 3 columns leave the 4th alone on a grey strip.
-   Use a 2 × 2 grid there. max-width: only the mobile layout is wrong, desktop keeps
-   Shoptet's 4 columns. */
-@media (max-width: 767px) {
-  .instagram-widget.columns-4 .instagram-widget-item {
-    flex-basis: 50%;
-    width: 50%;
+   Drobnosti · Shoptet stretches the posts across the whole window (≈360 px tiles
+   on a 1440 px screen). Make it a compact single-row strip like remab.sk:
+   desktop (≥ 992 px) = all posts in one row as wide as the page content,
+   tiles max 160 px; mobile + tablet = one row scrolled with a finger.
+   Independent of the post count set in admin (Apollo shows max 9). */
+
+.instagram-block {
+  margin-top: var(--ts-space-section);
+  /* Room for the follow button: gap + Shoptet's button height (40 px) + space below. */
+  padding-bottom: calc(var(--ts-space-3) + 40px + var(--ts-space-section));
+}
+
+.instagram-block .instagram-widget {
+  /* static: the follow button is absolutely positioned inside the widget; anchor
+     it to .instagram-block instead, so the mobile scroller doesn't clip it. */
+  position: static;
+  flex-wrap: nowrap;
+  gap: var(--ts-space-2);
+  margin: 0 auto;
+  /* Same side padding as Shoptet's .container, so the strip lines up with the page. */
+  padding: 0 20px;
+  background: none;
+}
+
+/* Shoptet's full-width shadow under the tiles. */
+.instagram-block .instagram-widget::after {
+  display: none;
+}
+
+.instagram-block .instagram-follow-btn {
+  top: auto;
+  bottom: var(--ts-space-section);
+  left: 0;
+  margin-top: 0;
+}
+
+/* Mobile + tablet: ~2.4 tiles visible on a phone (≈135 px, post texts stay
+   readable; max 180 px on a tablet), the cut one hints the strip scrolls.
+   With few posts there's nothing to scroll and flex-grow fills the row instead. */
+@media (max-width: 991px) {
+  .instagram-block .instagram-widget {
+    justify-content: flex-start;
+    gap: var(--ts-space-2);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 20px;
+    scrollbar-width: none;
+  }
+
+  .instagram-block .instagram-widget::-webkit-scrollbar {
+    display: none;
+  }
+
+  .instagram-block .instagram-widget .instagram-widget-item {
+    flex: 1 0 min(calc((100% - 2 * var(--ts-space-2)) / 2.4), 180px);
+    width: auto;
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+}
+
+@media (min-width: 768px) {
+  .instagram-block {
+    padding-bottom: calc(var(--ts-space-3) + 50px + var(--ts-space-section)); /* button 50 px */
+  }
+}
+
+/* Desktop: one centred row, widths copied from Shoptet's .container breakpoints. */
+@media (min-width: 992px) {
+  .instagram-block .instagram-widget {
+    justify-content: center;
+    width: 972px;
+  }
+
+  .instagram-block .instagram-widget .instagram-widget-item {
+    flex: 0 1 160px;
+    width: auto;
+    min-width: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .instagram-block .instagram-widget {
+    width: 1178px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .instagram-block .instagram-widget {
+    width: 1418px;
   }
 }

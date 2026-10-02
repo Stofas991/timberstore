@@ -26,6 +26,7 @@
   --ts-space-1: 4px;
   --ts-space-2: 8px;
   --ts-space-3: 16px;
+  --ts-space-section: 40px; /* vertical gap around homepage blocks */
   --ts-z-preview: 99999;
 }
 
